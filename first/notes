@@ -1,0 +1,6 @@
+npm init -y
+export NODE_MODULE_CACHE=./.cache
+./node_modules/.bin/tsc index.ts
+node --import=tsx index.ts
+node --import=tsx --watch index.ts
+node --experimental-detect-module server.js
