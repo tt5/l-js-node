@@ -1,5 +1,13 @@
 # one
 
+:slot[fallback]{name="title"}
+
+:slot[fallback]{name="no"}
+
+:slot{name="quote"}
+
+:span[:slot{name="svg"}]{.fill-red-300}
+
 one:br
 X&emsp;X
 
