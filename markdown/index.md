@@ -1,30 +1,16 @@
-# one
+# hello
 
-:slot[fallback]{name="title"}
+:::chemfig
+\chemfig{*6((=O)-N(-H)-(*5(-N=-N(-H)-))=-(=O)-N(-H)-)}
+:::
 
-:slot[fallback]{name="no"}
+:::chemfig
+\chemfig{N=-N}
+:::
 
-:slot{name="quote"}
-
-:span[:slot{name="svg"}]{.fill-red-300}
-
-one:br
 X&emsp;X
 
 X &emsp; X
-
-::::main{.bg-yellow-200.border}
-:::section
-
-section1
-
-:::
-:::section
-
-section2
-
-:::
-::::
 
 text $2^2$ text
 
