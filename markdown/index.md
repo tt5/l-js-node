@@ -5,12 +5,8 @@
 :::
 
 :::chemfig
-\chemfig{N=-N}
+\chemfig{N=N}
 :::
-
-X&emsp;X
-
-X &emsp; X
 
 text $2^2$ text
 

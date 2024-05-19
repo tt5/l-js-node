@@ -27,40 +27,50 @@ let values = {
 
   // a HAST tree that will be inserted
   quote: h("p", "It was the best of times..."),
-  svg:   s('svg', {xmlns: 'http://www.w3.org/2000/svg', viewbox: '0 0 100 100'}, [
-    s('circle', {cx: 120, cy: 120, r: 100})
-  ]) 
+  svg: s('svg', { xmlns: 'http://www.w3.org/2000/svg', viewbox: '0 0 100 100' }, [
+    s('circle', { cx: 120, cy: 120, r: 100 })
+  ])
 };
 
 let chemfigN = 0
 
 function myRemarkPlugin() {
-  return function (tree) {
-    visit(tree, function (node) {
+  return function(tree) {
+    visit(tree, function(node) {
       if (
         node.type === "containerDirective" ||
         node.type === "leafDirective" ||
         node.type === "textDirective"
       ) {
-        if (node.name === "chemfig"){
+        if (node.name === "chemfig") {
           chemfigN++
           let text = node.children[0].children[0].value
           execSync(`
-          dvilualatex << END
+          latex -output-format=dvi << END
           \\documentclass{article}
           \\usepackage{chemfig}
+          \\usepackage{tcolorbox}
           \\begin{document}
+          \\newtcbox{\\mybox}{opacityframe=0,opacityback=0}
+          \\hoffset=-1in
+          \\voffset=-1in
+          \\setbox0\\hbox{
+          \\mybox{
           ${text}
-          \\end{document}
+          }
+          }
+          \\shipout\\box0
+          \\stop
           END
           `
-          , {encoding: 'utf-8'})
-          execSync(`dvisvgm texput.dvi --stdout  --exact-bbox > ./data/chemfig${chemfigN}.svg`
-          , {encoding: 'utf-8'})
-        const data = node.data || (node.data = {});
-        const hast = h('img', {src: `chemfig${chemfigN}.svg`});
-        data.hName = hast.tagName;
-        data.hProperties = hast.properties;
+            , { encoding: 'utf-8' })
+          execSync(`dvisvgm texput.dvi --stdout > ./data/chemfig${chemfigN}.svg`
+            , { encoding: 'utf-8' })
+          const data = node.data || (node.data = {});
+          const hast = h('img', { src: `chemfig${chemfigN}.svg` });
+          data.hName = hast.tagName;
+          data.hProperties = hast.properties;
+          node.children = []
           return
         }
         const data = node.data || (node.data = {});
@@ -79,16 +89,16 @@ for await (const file of watch(`${import.meta.dirname}/data`)) {
   if (file.filename.endsWith("index.md")) {
     const processor = unified()
       .use(remarkParse)
-    /*
-      .use(codeblocks, {
-        lang: "chemfig",
-        formatter: (a) => a.toUpperCase()
-      })
-      */
+      /*
+        .use(codeblocks, {
+          lang: "chemfig",
+          formatter: (a) => a.toUpperCase()
+        })
+        */
       .use(remarkMath)
       .use(remarkDirective)
       .use(myRemarkPlugin)
-      .use(remarkRehype, {allowDangerousHtml: true})
+      .use(remarkRehype, { allowDangerousHtml: true })
       .use(rehypeRaw)
       //.use(rehypeSlots, { values })
       //.use(rehypeSortAttributeValues)
