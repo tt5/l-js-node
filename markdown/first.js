@@ -20,6 +20,7 @@ import rehypeSlots from "rehype-slots";
 import rehypeFormat from 'rehype-format'
 //import codeblocks from 'remark-code-blocks'
 import { execSync } from 'child_process'
+import "katex/dist/contrib/mhchem.mjs";
 
 let values = {
   // a string that will create a text node
@@ -48,7 +49,8 @@ function myRemarkPlugin() {
           execSync(`
           latex -output-format=dvi << END
           \\documentclass{article}
-          \\usepackage{chemfig}
+          \\usepackage{chemfig,chemmacros}
+          \\usepackage[version=4]{mhchem}
           \\usepackage{tcolorbox}
           \\begin{document}
           \\newtcbox{\\mybox}{opacityframe=0,opacityback=0}
@@ -85,8 +87,12 @@ function myRemarkPlugin() {
 }
 
 //for await (const file of glob(`${import.meta.dirname}/data/*.md`)) {
-for await (const file of watch(`${import.meta.dirname}/data`)) {
-  if (file.filename.endsWith("index.md")) {
+for await (const file of watch(`${import.meta.dirname}/in`)) {
+  //console.log(file.filename)
+  //console.log(`${process.argv[2]}`)
+  if (file.filename.endsWith(`${process.argv[2]}`)) {
+    chemfigN = 0
+    execSync(`awk -f process0.awk in/${process.argv[2]} | m4 -R def.m4f > data/index.md`)
     const processor = unified()
       .use(remarkParse)
       /*
@@ -112,7 +118,7 @@ for await (const file of watch(`${import.meta.dirname}/data`)) {
       .use(rehypeKatex)
       .use(rehypeStringify)
 
-    processor.process(readSync(file.filename)).then(
+    processor.process(readSync('index.md')).then(
       (file) => {
         //values.codeblock=file.data.codeblocks[0]
         //console.log(file.data.codeblocks)
