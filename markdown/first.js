@@ -22,18 +22,8 @@ import rehypeFormat from 'rehype-format'
 import { execSync } from 'child_process'
 import "katex/dist/contrib/mhchem.mjs";
 
-let values = {
-  // a string that will create a text node
-  title: "A Tale Of Two Cities",
-
-  // a HAST tree that will be inserted
-  quote: h("p", "It was the best of times..."),
-  svg: s('svg', { xmlns: 'http://www.w3.org/2000/svg', viewbox: '0 0 100 100' }, [
-    s('circle', { cx: 120, cy: 120, r: 100 })
-  ])
-};
-
 let chemfigN = 0
+let currentFile =""
 
 function myRemarkPlugin() {
   return function(tree) {
@@ -66,10 +56,10 @@ function myRemarkPlugin() {
           END
           `
             , { encoding: 'utf-8' })
-          execSync(`dvisvgm texput.dvi --stdout > ./data/chemfig${chemfigN}.svg`
+          execSync(`dvisvgm texput.dvi --stdout > ./data/pages/${currentFile}-${chemfigN}.svg`
             , { encoding: 'utf-8' })
           const data = node.data || (node.data = {});
-          const hast = h('img', { src: `chemfig${chemfigN}.svg` });
+          const hast = h('img', { src: `${currentFile}-${chemfigN}.svg` });
           data.hName = hast.tagName;
           data.hProperties = hast.properties;
           node.children = []
@@ -88,11 +78,14 @@ function myRemarkPlugin() {
 
 //for await (const file of glob(`${import.meta.dirname}/data/*.md`)) {
 for await (const file of watch(`${import.meta.dirname}/in`)) {
-  //console.log(file.filename)
+  console.log(file.filename)
+  currentFile = file.filename.split(".")[0]
+  //console.log(file.filename.split("."))
   //console.log(`${process.argv[2]}`)
-  if (file.filename.endsWith(`${process.argv[2]}`)) {
+  if (file.filename.endsWith('m4d')) {
+    console.log("process:", file.filename)
     chemfigN = 0
-    execSync(`awk -f process0.awk in/${process.argv[2]} | m4 -R def.m4f > data/index.md`)
+    execSync(`awk -f process0.awk in/${file.filename} | m4 -R def.m4f > data/index.md`)
     const processor = unified()
       .use(remarkParse)
       /*
@@ -119,11 +112,11 @@ for await (const file of watch(`${import.meta.dirname}/in`)) {
       .use(rehypeStringify)
 
     processor.process(readSync('index.md')).then(
-      (file) => {
+      (out) => {
         //values.codeblock=file.data.codeblocks[0]
         //console.log(file.data.codeblocks)
-        file.extname = ".html";
-        writeSync(file);
+        out.history = [out.history[0], `data/pages/${file.filename.split(".")[0]}.html`]
+        writeSync(out);
       },
       (error) => {
         throw error;

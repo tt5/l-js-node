@@ -1,4 +1,5 @@
-dist
+dist/
 *.svg
 index.html
 index.md
+pages/
