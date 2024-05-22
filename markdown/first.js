@@ -56,7 +56,7 @@ function myRemarkPlugin() {
           END
           `
             , { encoding: 'utf-8' })
-          execSync(`dvisvgm texput.dvi --stdout > ./data/pages/${currentFile}-${chemfigN}.svg`
+          execSync(`dvisvgm texput.dvi --stdout > ./data/public/${currentFile}-${chemfigN}.svg`
             , { encoding: 'utf-8' })
           const data = node.data || (node.data = {});
           const hast = h('img', { src: `${currentFile}-${chemfigN}.svg` });
@@ -105,7 +105,7 @@ for await (const file of watch(`${import.meta.dirname}/in`)) {
         title: "Title",
         css: [
           "https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css",
-          "style.css",
+          "styles.css",
         ],
       })
       .use(rehypeKatex)
@@ -115,7 +115,7 @@ for await (const file of watch(`${import.meta.dirname}/in`)) {
       (out) => {
         //values.codeblock=file.data.codeblocks[0]
         //console.log(file.data.codeblocks)
-        out.history = [out.history[0], `data/pages/${file.filename.split(".")[0]}.html`]
+        out.history = [out.history[0], `data/public/${file.filename.split(".")[0]}.html`]
         writeSync(out);
       },
       (error) => {

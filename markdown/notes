@@ -3,3 +3,4 @@ m4 -F def.m4f def.m4
 put .md4 files to in/
 
 alias n='node --experimental-detect-module' first.js nats_chemistry.m4d
+ln data/index.md index.md

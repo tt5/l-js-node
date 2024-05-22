@@ -2,3 +2,6 @@ ln -S index.md ../index.md
 ln -S index.html ../index.html
 
 npx vite
+
+TODO:
+pages folder + <a> + styles.css not working like this
