@@ -1,0 +1,92 @@
+# Math Intro
+
+A mathematical theory could be definded as a coherent collection of
+non-trivial theorems.
+
+"If and only if" is the same as logical equivalence. "A if and only if B"
+means that A and B are equally true.
+
+$\displaystyle \pi =4\sum_{i=0}^\infty \frac{(˗1)^i}{2i+1} $
+
+$\displaystyle e^{ix}=\cos x+i\sin x $
+
+$ z\in \mathbb{C} $, ²q¹
+$ z = \big| z \big| \cdot
+\big( \cos\theta + i\sin\theta \big) $
+
+$ \cos n \theta +i \sin n \theta =
+\big( \cos \theta +i \sin \theta \big) ^n $
+   
+**Involution:** ²q¹ $f(f(x))=x $.
+   
+**Binomial coefficient:** ²q¹
+$
+\begin{pmatrix}
+6\\\\3
+\end{pmatrix}
+=\frac{6!}{3!\big(6-3\big)!}
+$
+<span class="aside">&nbsp; "six&nbsp;over&nbsp;three"</span>
+
+$\displaystyle
+\begin{pmatrix} x\\\\k \end{pmatrix}
+=\frac{\big(x\big)_k}{k!}
+$
+²>¹
+$(x)_k$ falling factorial
+
+$x^{\bar{n}} = x(x+1)(x+2) \dots (x+n-1)$ "raising factorial".
+²>¹
+$\displaystyle
+(x+y)^{n} = \sum_{0 \leq k \leq n}
+\begin{pmatrix} n \\\\k \end{pmatrix}
+x^{n-k} y^k
+$
+
+$\displaystyle
+\frac{1}{\sqrt{1-4x}} =
+1+2x+6x^2+20x^3 \ldots =
+\sum_{n=0}^\infty
+\begin{pmatrix} 2 n \\\\ n \end{pmatrix} x^{n}
+$
+   
+Golden ratio $φ = \frac{\big(1+\sqrt 5\big)}{2}$ (approximately 1.618).
+
+$\displaystyle
+n! \sim \sqrt{2\pi n} {(\frac{n}{e})}^{n}
+$
+
+$\displaystyle
+\frac{1}{1-x}=\sum_0^{\infty}x^n,\quad 0<x<1
+$
+
+$x_{1,2}=\frac{1}{2}a(-b±\sqrt{b^2-4ac})$, for $ax^2+bx+c=0$
+
+$\displaystyle
+\int_0^1 x^2 \,\mathrm{d}x = \frac{1}{3}$
+
+*Weak König’s Lemma*: Every infinite binary tree has an infinite path.
+
+The volume $V$ and surface $S$
+of the $n$-dimensional spere of radius
+$r$ are given by:
+
+$\displaystyle
+V=\frac{\pi^{\frac{1}{2}n}r^n}{\Gamma(\frac{1}{2}n+1)}
+$
+
+$\displaystyle
+S=\frac{2\pi^{\frac{1}{2}n}r^{n-1}}
+{\Gamma(\frac{1}{2}n)}
+= \frac{n}{r}V
+$
+
+**space** ²q¹
+set with some structure (objects in the set are related to each other).
+
+in constructive mathematics one demands a proof $\rho$ that two
+equivalences $\lambda_1, \lambda_2 \colon \big( \nabla_1 \simeq \nabla_2
+\big) $ are equivalent, and hence a term $\rho \colon \big(\lambda_1 \simeq
+\lambda_2\big)$ of a higher identity type. If this goes ever on, and one
+speak of intensional type theory or homotopy type theory.
+

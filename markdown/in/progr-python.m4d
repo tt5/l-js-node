@@ -1,0 +1,127 @@
+## ipython
+
+`save -a` *file N*
+
+c-o ²q¹ add newline below
+
+## repl
+
+```python
+with open("file.py") as f:
+  exec(f.read())
+```
+
+# json, xml
+
+`pip install dicttoxml`
+
+```python
+from dicttoxml import dicttoxml
+import json
+file = json.load(open("file.json", "r"))
+xml = dicttoxml(file)
+```
+
+## pythonanywhere
+
+`python3 -m pip install --user` ...
+
+## ---
+
+pip install virtualenv  
+virtualenv myenv  
+source ./myenv/bin/activate  
+pip freeze > requirements.txt  
+pip install -r requirements.txt  
+deactivate  
+
+python3 -m venv .  
+source bin/activate  
+pip freeze > requirements.txt  
+pip install -r requirements.txt  
+deactivate  
+
+## venv
+
+python -m venv venv
+. venv/bin/activate
+
+## poetry
+
+self update  
+new proj  
+install  
+
+init  
+
+add  
+run  
+shell  
+update  
+
+# packages
+
+itertools  
+more-itertools  
+bitstring  
+
+# ---
+
+```python
+colour = {"Black": 0,
+          "Purple": 2,
+          "Brown": 4,
+          "Yellow": 9,
+          "Blue": 1}
+for ind, (keys, value) in enumerate(colour.items()):
+  print(ind, keys, value)
+
+color = ["Blue", "Orange", "Brown", "Red"]
+code = [20, 10, 56, 84]
+list(zip(color, code))
+
+Abbreviation = ['Bl', 'Or', 'Br', 'Gn']
+Color = ['Blue', 'Orange', 'Brown', 'Green']
+Code = [20, 10, 56, 88]
+for ab, col, cod in zip(Abbreviation, Color, Code):
+	print(ab, col, cod)
+
+Color = ['Blue', 'Orange', 'Brown', 'Green']
+Code = [20, 10, 56, 88]
+dict(zip(Color, Code))
+
+numb = (22, 10, 5, 34, 29)
+list(reversed(numb))
+```
+
+# alembic
+
+alembic revision --autogenerate -m "..."
+alembic upgrade head
+
+# decorator
+
+```python
+def announce(f):
+    def wrapper():
+        print('start')
+        f()
+        print('stop')
+
+    return wrapper
+
+
+@announce  # Decorator
+def hello():
+    print('hi')
+
+
+hello()
+```
+#
+
+```python
+Set S
+while S:
+  item = S.pop()
+```

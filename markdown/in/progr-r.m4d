@@ -1,0 +1,329 @@
+# install
+
+```
+conda install -c conda-forge r-base
+```
+
+#
+
+R comes with following infix functions predefined:  
+`%%` ²q¹ remainder  
+`%/%` ²q¹ Integer division  
+`%*%` ²q¹ Matrix multiplication  
+`%o%` ²q¹ Outer product  
+`%x%` ²q¹ Kronecker product  
+`%in%` ²q¹ Matching operator  
+
+`%%` and `x %/% y` can be used for non-integer `y`, e.g. `1 %/% 0.2`,
+but the results are subject to representation error and so may be
+platform-dependent.
+
+``` r
+> c(1,2) %in% c(0,1,2,3)
+[1] TRUE TRUE
+```
+
+the expression `a+b` is actually calling the function `` `+`()`` with the
+arguments a and b, as `` `+` (a, b)``. It is possible to create user-defined
+infix operators in R.  This is done by naming a function that starts and ends
+with \%.
+
+The complete list of built-in infix operators that don't need  `%` is:
+` :: ::: $ @ ^ * / + - > >= < <= == != ! & && | || ~ <- <<- `
+
+The following unary and binary operators are defined. They are listed in
+precedence groups, from highest to lowest.
+
+`:: :::` access variables in a namespace  
+`$ @` component / slot extraction  
+`[ [[` indexing  
+`^` exponentiation (right to left)  
+`- +` unary minus and plus  
+`:` sequence operator  
+`%any%` special operators (including %% and %/%)  
+`* /` multiply, divide  
+`+ -` (binary) add, subtract  
+`< > <= >= == !=` ordering and comparison  
+`!` negation  
+`& &&` and  
+`| ||` or  
+`~` as in formulae  
+`-> ->>` rightwards assignment  
+`<- <<-` assignment (right to left)  
+`=` assignment (right to left)  
+`?` help (unary and binary)  
+
+(Note that `=` is not necessarily an operator.)
+
+The binary operators `::`, `:::`, `$` and @ require names or string constants on the
+right hand side, and the first two also require them on the left. 
+
+The reserved words in R's parser are:
+`if else repeat while function for in next break`
+
+`TRUE FALSE NULL Inf NaN NA NA_integer_ NA_real_ NA_complex_ NA_character_`
+
+`...` and `..1`, `..2` etc, which are used to refer to arguments passed down from a
+calling function.
+
+``` r
+tst <- function(n, ...) ...elt(n)
+tst(1, pi=pi*0:1, 2:4) ## [1] 0.000000 3.141593
+tst(2, pi=pi*0:1, 2:4) ## [1] 2 3 4
+```
+
+Open parenthesis, `(`, and open brace, `{`, are .Primitive functions in R.
+
+Inf and NaN are numeric constants (with typeof(.) "double"). In text input
+(e.g., in scan and as.double), these are recognized ignoring case as is
+infinity as an alternative to Inf. NA_real_ and NA_integer_ are constants of
+types "double" and "integer" representing missing values. All other numeric
+constants start with a digit or period and are either a decimal or hexadecimal
+constant optionally followed by L.
+
+Hexadecimal constants start with 0x or 0X followed by a nonempty sequence from
+0-9 a-f A-F . which is interpreted as a hexadecimal number, optionally followed
+by a binary exponent. A binary exponent consists of a P or p followed by an
+optional plus or minus sign followed by a non-empty sequence of (decimal)
+digits, and indicates multiplication by a power of two. Thus 0x123p456 is 291 *
+2^456.
+
+Decimal constants consist of a nonempty sequence of digits possibly containing
+a period (the decimal point), optionally followed by a decimal exponent. A
+decimal exponent consists of an E or e followed by an optional plus or minus
+sign followed by a non-empty sequence of digits, and indicates multiplication
+by a power of ten.
+
+Values which are too large or too small to be representable will overflow to
+Inf or underflow to 0.0.
+
+A numeric constant immediately followed by i is regarded as an imaginary
+complex number.
+
+An numeric constant immediately followed by L is regarded as an integer number
+when possible (and with a warning if it contains a "."). 
+
+These operators act on raw, logical and number-like vectors.
+
+Usage
+
+! x
+x & y
+x && y
+x | y
+x || y
+xor(x, y)
+
+isTRUE (x)
+isFALSE(x)
+
+Arguments
+x, y
+
+raw, logical or ‘number-like’ vectors (i.e., of types double (class numeric),
+integer and complex), or objects for which methods have been written.
+
+```r
+bitwNot(a)
+bitwAnd(a, b)
+bitwOr(a, b)
+bitwXor(a, b)
+
+bitwShiftL(a, n)
+bitwShiftR(a, n)
+
+x[i]
+x[i, j, ... , drop = TRUE]
+x[[i, exact = TRUE]]
+x[[i, j, ..., exact = TRUE]]
+x$name
+getElement(object, name)
+
+x[i] <- value
+x[i, j, ...] <- value
+x[[i]] <- value
+x$name <- value
+
+if(cond) expr
+if(cond) cons.expr  else  alt.expr
+
+for(var in seq) expr
+while(cond) expr
+repeat expr
+break
+next
+```
+
+
+``` r
+m <- matrix(c(1,0,2,3,3,1),2,3)
+m <- t(m)
+```
+
+# Packages
+
+`.libPaths("...")`  
+`install.packages`  
+`install_github`
+
+magrittr  
+ggmap (ggplot2)  
+
+remotes  
+remotes::install_github("rstudio/renv")
+renv::init()
+
+renv::install("tidyverse")
+tidyverse_update()
+
+sudo apt-get install libssl-dev
+
+
+Sys.setenv(LANGUAGE = "en")
+
+Rcpp  
+BH  
+jsonlite  
+littler  
+daqana/tikzDevice  
+RcppArmadillo  
+RcppCore/RcppParallel  
+Rdatatable/data.table  
+
+# magrittr
+
+The operators pipe their left-hand side values forward into expressions that
+appear on the right-hand side, i.e. one can replace `f(x)` with `x %>% f`.
+
+``` r
+fun <- . %>% funa
+x %>% f(y, .)
+```
+
+`1 %>% cat(1,.) %>% cat(.,2)` => 1 1 2
+
+# data.table
+
+`DT[i, j, by][]`\ldots
+
+"Take `DT`, subset rows using `i`, then calculate `j`, grouped by `by`"
+
+`i`  
+-- Integer, logical or character vector  
+-- expression of column names  
+-- list  
+-- datatable  
+
+`j`  
+--   single column name  
+--   single expression of column names  
+--   list() of expression of column names  
+--   an expression of function call that evaluates to list  
+--   a vector of names or positions to select (with=FALSE)  
+
+`by`  
+--   single unquoted column name  
+--   list() of expr of column names  
+--   single character string containing comma separated column names character
+vector of column names  
+
+`.EACH`  
+`.SD`\quad data of the current group  
+`.BY`  
+`.N`\quad number of rows in the current group  
+`.I`\quad  hold for each item in the group it's row location in `x`  
+`.GRP`\quad  group count
+
+`.()` is an alias for `list()`
+
+Once you key a datatable by certain columns,
+you can subset by querying those key columns using
+the `.()` notation.
+On single columns key of character type,
+you can drop the `.()` notation and use
+the value directly.
+
+Key of one or more columns used for row indexing instead of rownames.
+
+```r
+copy()
+
+nomatch=0L
+
+`:=` (u=z+1, v=z-1)
+c("z","u"):=NULL
+c('u','v'):=list(
+  temp<-x*y, sqrt(abs(temp))
+
+DT[,.(y,x)]
+print(DT, topn=20)
+```
+
+`fread("` *[shellcommand]* *filename* `"` or
+`"` *string*`\n "` `)`
+
+```r
+d <- fread("1,0\n2,3\n3,1")
+setkey(d)
+d[1]
+```
+
+```r
+c("V1","V2") := NULL
+(var) := NULL
+d[3:5, V1:=func()]
+d[V2=="A", V1:=round(exp(V1,2))]
+d <- data.table(V1=c("1","2"))
+setkey(d,V1)
+d["1"]
+d[c("1", "2"), sum(V2), b=.EACHI)]
+setkey(d, V1, V2)
+d[.(2, "C")]
+d[.N-1]
+d[,.N] number of rows
+d[, mean(V3), by=.(V1,V2)] all possible comb
+d[...][order(-V1)]
+setnames(d, "V2", "Rating")
+setnames(d, c("A","B"), c("a","b")
+setcolorder(d, c("b","a"))
+```
+
+## ggplot2
+
+```
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+#
+
+libharfbuzz-dev
+libfribidi-dev
+libfreetype6-dev
+libpng-dev
+libtiff5-dev
+libjpeg-dev
+libopenblas-dev
+
+```r
+local({
+    r <- getOption("repos")
+    r["CRAN"] <- "https://cloud.r-project.org"
+    options(repos = r)
+})
+```
+
+repos <- c("https://ghrr.github.io/drat", "https://cloud.r-project.org")
+install.packages("RcppTOML", repos=repos)
+
+library(tensorflow)
+tf$config$list_physical_devices("GPU")
+
+https://github.com/tensorflow/tensorflow/issues/42738
+ for a in /sys/bus/pci/devices/*; do echo 0 | sudo tee -a $a/numa_node; done
+
+# some
+
+```r
+source("file")
+```

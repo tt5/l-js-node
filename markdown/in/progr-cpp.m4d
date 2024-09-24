@@ -1,0 +1,560 @@
+# Language
+
+entities:
+
+values  
+objects  
+references  
+functions  
+enumerators  
+types  
+class members  
+templates  
+template specializations  
+namespaces  
+parameter packs  
+this-pointer
+
+Entities are introduced by **declarations**, which associate
+them with names and define their properties (type, scope,
+storage duration, linkage).
+
+The declarations that define all properties required to use
+an entity are **definitions**.
+
+An object declaration (outside a class) is also a definition unless it contains an extern specifier and no initializer:
+
+```cpp
+int i; // definition
+extern int j; // non-defining declaration. "it exists, but not here"
+extern int k = 3; // definition
+```
+
+Definitions of functions include sequences of statements,
+some of which include expressions.
+
+Each object, reference, and function in C++ is associated with
+a type.
+
+An **object** is some memory that holds a value of a given type.
+A **value** is a set of bits in memory interpreted according to a type.
+
+# Variadic templates
+
+```cpp
+template<typename T>
+T adder(T v) {
+  return v;
+}
+
+template<typename T, typename... Args>
+T adder(T first, Args... args) {
+  return first + adder(args...);
+}
+```
+
+And here are a couple of ways we could call it:
+
+```cpp
+long sum = adder(1, 2, 3, 8, 7);
+
+std::string s1 = "x", s2 = "aa", s3 = "bb", s4 = "yy";
+std::string ssum = adder(s1, s2, s3, s4);
+```
+
+`typename... Args` is called a template parameter pack, and
+`Args... args` is called a function parameter pack (Args is,
+of course, a completely arbitrary name and could be anything
+else).
+
+If we insert the following as the first line in both versions of adder
+above:
+
+```cpp
+std::cout << __PRETTY_FUNCTION__ << "\n";
+```
+
+And then execute adder(1, 2, 3, 8, 7), we'll see:
+
+```cpp
+T adder(T, Args...) [T = int, Args = <int, int, int, int>]
+T adder(T, Args...) [T = int, Args = <int, int, int>]
+T adder(T, Args...) [T = int, Args = <int, int>]
+T adder(T, Args...) [T = int, Args = <int>]
+T adder(T) [T = int]
+```
+
+```cpp
+template<typename T>
+bool pair_comparer(T a, T b) {
+  // In real-world code, we wouldn't compare floating point values like
+  // this. It would make sense to specialize this function for floating
+  // point types to use approximate comparison.
+  return a == b;
+}
+
+template<typename T, typename... Args>
+bool pair_comparer(T a, T b, Args... args) {
+  return a == b && pair_comparer(args...);
+}
+```
+
+```cpp
+pair_comparer(1.5, 1.5, 2, 2, 6, 6, 7)
+```
+
+Does not compile; the compiler complains that the base case
+expects 2 arguments but only 1 is provided. To fix this, we
+can add another variation of the function template:
+
+```cpp
+template<typename T>
+bool pair_comparer(T a) {
+  return false;
+}
+```
+
+Variadic templates make it possible to define data
+structures that could have an arbitrary number of fields,
+and have this number configured per use.
+
+```cpp
+template <template <typename, typename...> class ContainerType,
+          typename ValueType, typename... Args>
+void print_container(const ContainerType<ValueType, Args...>& c) {
+  for (const auto& v : c) {
+    std::cout << v << ' ';
+  }
+  std::cout << '\n';
+}
+```
+
+What this says is - ContainerType is a template template
+parameter with any amount of template parameters itself. We
+don't care really, as long as the compiler can type-deduce
+them at the call. This version of the function will work
+for map, set, unordered_map and other containers. One small
+addition we have to make to support mappings is:
+
+```cpp
+// Implement << for pairs: this is needed to print out mappings where range
+// iteration goes over (key, value) pairs.
+template <typename T, typename U>
+std::ostream& operator<<(std::ostream& out, const std::pair<T, U>& p) {
+  out << "[" << p.first << ", " << p.second << "]";
+  return out;
+}
+```
+
+# SFINAE
+
+## class
+
+Substitution failure is not an error (SFINAE) refers to a situation in
+C++ where an invalid substitution of template parameters is not in itself an error.
+
+```cpp
+#include <type_traits>
+
+template <typename T, typename Enable = void>
+class foo;
+
+template <typename T>
+class foo<T,
+  typename std::enable_if<std::is_integral<T>::value>::type>
+{ };
+
+template <typename T>
+class foo<T,
+  typename std::enable_if<std::is_floating_point<T>::value>::type>
+{ };
+```
+
+## Function
+
+```cpp
+#include <type_traits>
+#include <limits>
+#include <cmath>
+
+template <typename T>
+typename std::enable_if<std::is_integral<T>::value,
+  bool>::type
+  equal(T lhs, T rhs)
+{
+  return lhs == rhs;
+}
+
+template <typename T>
+typename std::enable_if<std::is_floating_point<T>::value,
+  bool>::type
+  equal(T lhs, T rhs)
+{
+return std::abs(lhs - rhs) < 0.0001;
+}
+```
+
+# Identifiers
+
+C++ grammar formally requires Unicode characters to be
+escaped with `\u` or `\U`, but due to translation phase 1,
+that is exactly how raw unicode characters from the source
+code are presented to the compiler. Also note that support
+of this feature may be limited, e.g. gcc. Gcc supports UCNs
+in identifiers, not extended characters represented other
+than with UCNs. So how do you express UCN in the code? By
+using the `\uNNNN` or `\UNNNNNNNN` syntax.
+
+# STL
+
+## Container
+
+The container manages the storage space for its elements and
+provides member functions to access them, either directly or
+through iterators (reference objects with similar properties
+to pointers). Containers replicate structures very commonly
+used in programming.
+
+Stack, queue and priority_queue are implemented as container
+adaptors. Container adaptors are not full container classes,
+but classes that provide a specific interface relying on an
+object of one of the container classes (such as deque or
+list) to handle the elements. The underlying container is
+encapsulated in such a way that its elements are accessed by
+the members of the container adaptor independently of the
+underlying container class used.
+
+Two class templates share certain properties with
+containers, and are sometimes classified with them: bitset
+and valarray.
+
+Sequence containers:
+
+array  
+vector  
+deque  
+forward_list  
+list  
+
+Container adaptors:
+
+stack  
+queue  
+priority_queue  
+
+Associative containers:
+
+set  
+multiset  
+map  
+multimap  
+
+Unordered associative containers:
+
+unordered_set  
+unordered_multiset  
+unordered_map  
+unordered_multimap  
+
+# Algorithms
+
+Standard Template Library: Algorithms The header
+`<algorithm>` defines a collection of functions especially
+designed to be used on ranges of elements.
+
+A range is any sequence of objects that can be accessed
+through iterators or pointers, such as an array or an
+instance of some of the STL containers. Notice though, that
+algorithms operate through iterators directly on the values,
+not affecting in any way the structure of any possible
+container (it never affects the size or storage allocation
+of the container).
+
+Functions in \<algorithm\>
+
+all_of
+Test condition on all elements in range (function template )
+
+any_of
+Test if any element in range fulfills condition (function template )
+
+none_of
+Test if no elements fulfill condition (function template )
+
+for_each
+Apply function to range (function template )
+
+find
+Find value in range (function template )
+
+find_first_of
+Find element from set in range (function template )
+
+adjacent_find
+Find equal adjacent elements in range (function template )
+
+count
+Count appearances of value in range (function template )
+
+mismatch
+
+copy
+Copy range of elements (function template )
+
+copy_n
+Copy elements (function template )
+Return first position where two ranges differ (function template )
+
+equal
+Test whether the elements in two ranges are equal (function template )
+
+is_permutation
+Test whether range is permutation of another (function template )
+
+move
+Move range of elements (function template )
+
+move_backward
+Move range of elements backward (function template )
+
+swap
+Exchange values of two objects (function template )
+
+swap_ranges
+Exchange values of two ranges (function template )
+
+fill
+Fill range with value (function template )
+
+transform
+Transform range (function template )
+
+generate
+Generate values for range with function (function template )
+
+unique
+Remove consecutive duplicates in range (function template )
+
+reverse
+Reverse range (function template )
+
+rotate
+Rotate left the elements in range (function template )
+
+shuffle
+Randomly rearrange elements in range using generator (function template )
+
+sort
+Sort elements in range (function template )
+
+stable_sort
+Sort elements preserving order of equivalents (function template )
+
+partial_sort
+Partially sort elements in range (function template )
+
+is_sorted
+Check whether range is sorted (function template )
+
+is_sorted_until
+Find first unsorted element in range (function template )
+
+binary_search
+Test if value exists in sorted sequence (function template )
+
+min
+Return the smallest (function template )
+
+max
+Return the largest (function template )
+
+minmax
+Return smallest and largest elements (function template )
+
+min_element
+Return smallest element in range (function template )
+
+max_element
+Return largest element in range (function template )
+
+minmax_element
+Return smallest and largest elements in range (function template )
+
+lexicographical_compare
+Lexicographical less-than comparison (function template )
+
+next_permutation
+Transform range to next permutation (function template )
+
+prev_permutation
+Transform range to previous permutation (function template )
+
+push_heap
+Push element into heap range (function template )
+
+pop_heap
+Pop element from heap range (function template )
+
+make_heap
+Make heap from range (function template )
+
+sort_heap
+Sort elements of heap (function template )
+
+is_heap
+Test if range is heap (function template )
+
+# libraries
+
+fmt
+
+```cpp
+#include <vector>
+#include <fmt/ranges.h>
+
+int main() {
+  std::vector<int> v = {1, 2, 3};
+  fmt::print("{}\n", v);
+}
+```
+
+```cpp
+#include <fmt/os.h>
+
+int main() {
+  auto out = fmt::output_file("guide.txt");
+  out.print("Don't {}", "Panic");
+}
+```
+
+## function template
+
+```cpp
+template <typename T> // this is the template parameter declaration
+T max(T x, T y) // this is the function template definition for max<T>
+{
+    return (x > y) ? x : y;
+}
+
+max<int>(1, 2); // instantiates and calls function max<int>(int, int)
+```
+
+# ---
+
+sudo apt-get install libfmt-dev
+
+```cpp
+#include <iostream>
+#include <fmt/core.h>
+
+int main(int argc, char* argv[]) {
+    std::cout << fmt::format("Hello {}", "World") << std::endl;
+};
+```
+
+add.cpp
+```cpp
+int add(int x, int y)
+{
+    return x + y;
+}
+```
+
+main.cpp
+```cpp
+#include <iostream>
+
+int add(int x, int y);
+
+int main()
+{
+    std::cout << add(3, 4) << '\n';
+    return 0;
+}
+```
+
+g++ main.cpp add.cpp -o main
+
+# gradle
+
+gradle init
+gradle build && ./app/build/exe/main/debug/app
+gradle assembleRelease
+
+# build script
+
+```bash
+#!/bin/bash
+
+cflags="-Isrc" 
+lflags=""
+compiler="g++"
+
+echo "compiling ..."
+for f in `find src -name "*.cpp"`; do
+  $compiler $f $lflags $cflags 
+done
+echo "done"
+```
+
+# some
+
+```cpp
+#include <iostream>
+#include <thread>
+
+int& use_count()
+{
+static int uc=1000; // starting value
+return uc;
+};
+
+int main() {
+  std::cout << ++use_count() << std::endl;
+  std::cout << ++use_count() << std::endl;
+};
+```
+
+```cpp
+#include <iostream>
+#include <list>
+#include <thread>
+
+int& use_count()
+{
+  std::list<int> l;
+
+  l.push_back(123);
+  l.push_back(4);
+
+  int i;
+  std::list<int>::iterator it;
+  for (i=0, it=l.begin(); it!=l.end(); i++, it++)
+    std::cout << i << ": " << *it << std::endl;
+};
+```
+
+```cpp
+#include <iostream>
+#include <list>
+#include <thread>
+#include <fmt/core.h>
+
+template<typename T>
+T adder(T v) {
+    return v;
+}
+
+template<typename T, typename... Args>
+T adder(T first, Args... args) {
+    return first + adder(args...);
+}
+
+int main(int argc, char* argv[]) {
+    long sum = adder(1,2,3,4,5);
+    std::string s1 = "a", s2 = "b";
+    std::string ssum = adder(s1, s2);
+
+    fmt::print("res: {}, {}", sum, ssum);
+};
+```

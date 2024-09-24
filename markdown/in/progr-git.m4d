@@ -1,0 +1,81 @@
+git remote set-url origin git@github.com:username/repo
+
+unstage everything:
+git reset
+
+git config --global user.name "..."
+git config --global user.email john@email.com
+git config --global core.editor editorname
+git config --global init.defaultBranch main
+
+git config --list
+
+git diff
+git log --oneline
+git diff \<ID\>
+
+# branches
+
+delete:
+git branch -d branchname
+git push origin --delete branchname
+
+git fetch
+
+git branch -a
+
+merge:
+git checkout main
+git diff otherbranchname
+git merge otherbranchname
+
+undo last commit:
+git reset --soft HEAD~1
+
+hard reset:
+git reset --hard HEAD~1
+
+# workflow (clone)
+
+git clone
+
+git checkout -b branchname
+
+*make changes*
+
+git add
+git commit
+git push origin branchname
+
+visit the repository on github and click the pull request button
+and then click the green new pull request button.
+In there, choose the branch that you want to merge to and the
+branch that you want to merge from
+Then review the changes and add a title and description and hit
+the create button
+
+request a review and merge
+repository
+
+find . -type l | sed -e s'/^\.\///g' >> .gitignore
+
+You can use this syntax to rename the old branch to something new.
+`git branch -m old-branch new-branch`
+
+# ---
+
+git diff @~
+
+`@` means `HEAD`
+
+```bash
+eval $(ssh-agent)
+ssh-add
+```
+git log --oneline
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_ed25519
+
+ssh-add -l
+
+ssh-keygen -t ed25519 -C "your_email@example.com"

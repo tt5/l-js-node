@@ -1,0 +1,1561 @@
+# C
+
+A **C Program** is a sequence of text files that contain *declarations*. They
+undergo translation to become an executable program, which is executed when the
+OS calls its **main function** (unless it is itself the OS or another
+freestanding program, in which case the entry point is implementation-defined.)
+*These declarations declare functions and objects* with external linkage. They
+are known as **external declarations** because they appear outside of any
+function.
+
+preprocessing translation unit:  
+A source file together with all the headers
+and source files included via `#include`.
+
+**translation unit**  
+Preprocessing translation unit after preprocessing.
+*One or more external declaration.*
+Translation units may be separately translated and then later linked to
+produce an executable program.
+
+A declaration that also causes storage to be reserved for an object or a function named
+by the identifier is a **definition**.
+
+declaration: file.h, definition: file.c.
+
+**function prototype**  
+*Declaration of a function* that declares the types of
+its parameters.
+
+The ellipsis notation in a function prototype declarator causes argument type
+conversion to stop after the last declared parameter. The default argument
+promotions are performed on trailing arguments.
+
+A **definition** of an identifier is a declaration for that identifier that:  
+— for an object, causes storage to be reserved for that object;  
+— for a function, includes the function body;  
+— for an enumeration constant, is the (only) declaration of the identifier;  
+— for a typedef name, is the first (or only) declaration of the identifier.  
+
+If the declaration of an identifier for an object has file scope and an
+initializer, the declaration is an **external definition** for the identifier.
+
+**function definition**  
+declspec declor [ declaration ]? compoundstat
+
+The **declaration specifiers** consist of a sequence of specifiers that indicate
+the linkage, storage duration, and part of the type of the entities that the
+declarators denote. The init-declarator-list is a comma-separated sequence of
+declarators, each of which may have additional type information, or an
+initializer, or both. The declarators contain the identifiers (if any) being
+declared.
+
+**declarator**  
+Name of the function and the identifiers of its parameters.  A declarator with
+a parametertypelist serves as a function prototype for later calls to the same
+function in the same translation unit.  Each declarator declares one
+identifier, and asserts that when an operand of the same form as the declarator
+appears in an expression, it designates a function or object with the scope,
+storage duration, and type indicated by the declaration specifiers.  A **full
+declarator** is a declarator that is not part of another declarator.  A
+declarator in parentheses is identical to the unparenthesized declarator, but
+the binding of complicated declarators may be altered by parentheses.
+
+**abstract declarator**  
+Cast or argument to `size-of`.
+
+A **punctuator** is a symbol that has independent syntactic and semantic
+significance.  Depending on context, it may specify an operation to be
+performed (which in turn may yield a value or a function designator, produce a
+side effect, or some combination thereof) in which case it is known as an
+operator (other forms of operator also exist in some contexts).
+
+**object-like macro**  
+`#define` identifier replacementlist newline
+
+**function-like macro**  
+`#define` identifier lparen [ idlist$_{opt}$ OR `...` OR idlist `,  ...` ] `)` replacementlist newline
+
+**preprocessingfile**  
+[ if-section OR control-line OR test-line OR `#` non-directive ]`*`
+
+**storageclassspecifiers**  
+[ extra OR static ]?
+
+A *function declaration* can contain the storage class specifier `static` only if
+it is at file scope
+
+A **generic selection** is a primary expr:  
+`_Generic` `(` conrolling-expr `,` [ generic-association `,` ]$_{nopt}$ generic-association `)`
+
+**generic-association** ²q¹ *def*  
+type-name `:` aexpr  
+default `:` aexpr
+
+**controlling-expr**  
+any expression (except for the comma operator) whose type must be compatible
+with one of the type-names if the default association is not used
+
+**type-name**  
+complete object type other than a variably modified type.
+
+**argument**  
+expression in the comma-separated list
+bounded by the parantheses in a function call expression,
+or a sequence of preprocessing tokens in the comma-separated
+list bounded by parantheses in a function-like macro invocation.
+
+A postfix expression followed by parentheses `()` containing a possibly empty, comma-
+separated list of expressions is a **function call**.
+
+**parameter**  
+object declared as part of a function declaration
+or definition that acquires a value on entry
+to the function, or an identifier from the comma-separated
+list bounded by the parantheses immediately following the macro
+name in a function-like macro definition.
+
+**type qualifier**  
+`const` ²q¹
+`restrict` ²q¹
+`volatile` ²q¹
+`_Atomic` ²q¹
+
+**function specifiers**  
+`inline` ²q¹
+`_Noreturn` ²q¹
+
+**storage class specifier**  
+`typedef` ²q¹
+`extern` ²q¹
+`static` ²q¹
+`_Thread_local` ²q¹
+`auto` ²q¹
+`register` ²q¹
+
+**storage duration**  
+Static,
+thread,
+automatic,
+allocated.
+
+**extended character set** ²q¹ *def*  
+basic character set  
+extended characters (nopt)
+
+**basic execution character set** ²q¹ *def*  
+basic character set  
+alert  
+backspace  
+CR  
+NL  
+NULL  
+
+**statement** ²q¹ *def*  
+block  
+exprstat  
+selectionstat  
+jumpstat  
+iterationstat  
+
+**block (compound stat)** ²q¹ *def*  
+`{` *[* decl *or* stat *]*²s¹ `}`
+
+**iterationstat** ²q¹ *def*  
+`while ( expr ) stat`  
+`do stat while ( expr ) ;`  
+`for ( [ expr? ; or decl ] expr? ; expr? ) stat`
+
+**typename** (name of a type) *def*  
+spqul abstrdeclarator$_{\text{opt}}$
+
+In several contexts, it is necessary to specify a type. This is accomplished
+using a *type name*, which is syntactically a declaration for a function or
+an object of that type that omits the identifier.
+
+**ifgr** ²q¹ *def*  
+`#`[  
+`if` cexpr  
+`ifdef` id  
+`ifndef` id  
+] nl [grp]$_{nopt}$  
+
+**initialzer-list** ²q¹ *def*  
+[ [ designator ]$_n$
+= ]$_{opt}$
+initializer [, <$\gets\bullet$>]$_{nopt}$
+
+**initializer** ²q¹ *def*  
+aexpr  
+\{ initializerlist ,? }
+
+**designator** ²q¹ *def*  
+[ constexpr ]  
+. id
+
+**selection stat** ²q¹ *def*  
+if ( expr ) stat [ else stat ]?  
+switch ( expr ) stat
+
+Preprocessing tokens:  
+Preprocessing tokens can be seperated by white space (comments, white space characters
+(space, htab, vtab, nl, ff)).
+
+predefined identifiers:
+`__func__`
+
+The identifier `__VA_ARGS__` shall occur only in the replacement-list of a function-like
+macro that uses the ellipsis notation in the parameters.
+
+Predefined Macros:
+`__DATE__`
+`__FILE__`
+`__LINE__`
+`__TIME__`
+
+## Pointers
+
+A pointer is a memory address.
+
+The unary `&` (address-of) operator cannot be applied to a bit-field object;
+thus, there are no pointers to or arrays of bit-field objects.
+
+# Declaration
+
+A **declaration** specifies the interpretation and attributes of a set of
+identifiers (functions and objects).
+
+A declaration other than a `static_assert` declaration shall declare at least
+one of  
+— declarator (other than the parameters of a function or the members of a
+structure or union)  
+— a tag  
+— the members of an enumeration.
+
+A function declaration shall not specify a return type that is a function type
+or an array type.  A function receiving an array never receives an array but a
+pointer.
+
+`int (*pa)[20];`  
+variable `pa` of type pointer to array 20 of int
+
+`int *ap[20];`  
+variable `ap` of type array 20 of pointer to int
+
+`int x,`  
+no initializer  
+`y = 3,`  
+initializer is = 3  
+`z[2] = {1, 2};`  
+
+initializer is = `{ 1, 2 }`  
+
+```c
+struct C  
+{  
+// declares field 'x' of type pointer to int  
+    int *x,  
+// declares bitfield 'y' of length 2 and type int  
+    y:2;  
+};
+```
+
+```c
+//abstract, read it like "`int *D1`"  
+void f1(int*,  
+//abstract, read it like "`float (*D2)[10]`"  
+    float (*)[10]  
+    );  
+//probably you meant "`void f2(float a, float b);`"  
+void f2(float a, b);  
+```
+
+```c
+//"externally" looks like '`void f(int c)`'  
+void f(const int c)
+{
+//ERROR: cannot assign to constant object 'c'  
+    c = 3;
+}
+//OK: this is a (redundant) declaration of the f above
+void f(int c);
+```
+
+```c
+void foo(int bar(float, double));
+```
+
+becomes
+
+```c
+void foo(int (*bar)(float, double));
+
+void foo(int c[10]);
+void bar(int m[10][20]);
+```
+
+becomes
+
+```c
+void foo(int *c);
+void bar(int (*m)[20]);
+```
+
+`int a[10], b[10];`  
+`a = b;`  
+ERROR: 'a' is not a modifiable lvalue
+
+`int a[10];`  
+`a;`  
+rvalue of pointer to int, the address of `a[0]`  
+
+```c
+void f(int c[10])
+{
+//probably dumb but OK  
+    c = NULL;
+}
+```
+
+`void f(int c[1])`  
+read this as "`void f(int *c)`"  
+
+```c
+{
+  c[1] = 3;
+}
+void g()
+{
+  int w[2];
+//this is fine  
+  f(w);
+}
+```
+
+```c
+void f(int c[static 10]) { ... }
+void g(int *w
+{
+//ERROR: argument 'NULL' will never be an address to an `int [10]`  
+  f(NULL)
+  int m[5];
+//ERROR: argument 'm' will never be an address to an `int [10]`  
+  f(m);
+//OK: I do not know anything about w  
+  f(w);
+  w = m;
+//WARNING if the compiler does some data-flow analysis, OK otherwise  
+  f(w);
+}
+```
+
+`int a[10];`  
+'a' is an array 10 of int  
+`int *p;`  
+'p' is a pointer to int  
+`int (*pa)[10];`  
+'pa' is a pointer to array 10 of int
+
+```c
+p = a;
+pa = &a;
+```
+
+The four statements below have the same effect
+
+```c
+a[1] = 3;
+p[1] = 3;
+(*pa)[1] = 3;
+pa[0][1] = 3;
+
+void f(int (*pa)[10]);
+```
+
+```c
+void g(
+{
+  int a[10];
+//OK  
+  g(&a);
+//Incompatible types: argument is 'int*' but parameter is 'int (*)[10]'  
+  g(a)
+  int b[11];
+//Incompatible types: argument is 'int (*)[11]' but parameter is 'int (*)[10]'  
+  g(&b);
+}
+```
+
+```c
+#include <stdint.h>
+#include <assert.h>
+void g()
+{
+   int a[10];
+   assert((intptr_t)a == (intptr_t)&a);
+}
+```
+
+`void f(int m[10][20]);`  
+this is the same as  
+`void f(int (*m)[20]);`  
+
+## External declaration
+
+(x,y declared for descriptive purposes only)
+
+```c
+int f(void), *fip(), (*fip)();
+int (*apfi[3])(int *x, int *y);
+int (*fpfi(int (*)(long),int))(int,...);
+```
+
+The special case of an unnamed parameter of type void
+as the only item in the list specifies that the function has no parameters.
+
+## Tentative Definitions
+
+A tentative definition is an external declaration without an initializer, and either
+without a storage-class specifier or with the specifier `static`.
+
+A tentative definition is a declaration that may or may not act as a
+definition. If an actual external definition is found earlier or later in the
+same translation unit, then the tentative definition just acts as a
+declaration. 
+
+If there are no definitions in the same translation unit, then the
+tentative definition acts as an actual definition and be initialized to `0`.
+
+# Statement
+
+## switch statement
+
+the expr of each case label shall be an integer
+constant expr and no two of the case const expr
+in the same switch statement shall have the same
+value after conversion.
+
+There may be at most one default label in a switch stat.
+
+# Expression
+
+Definitions of functions include sequences of statements
+and declarations, some of which include expressions.
+
+Every expression belongs to one of three primary categories: lvalues, function
+designators, and non-lvalue object expressions (rvalues).
+
+**Lvalue** expression evaluates to the object identity.
+
+The semantics of const/volatile/restrict-qualifiers and atomic types apply to
+lvalues only (lvalue conversion strips the qualifiers and removes atomicity).
+
+atomic type specifier:  
+`_Atomic` `(` typename `)`
+
+A **modifiable lvalue** is any lvalue expression of complete, non-array type
+which is not const-qualified, and, if it's a struct/union, has no members that
+are const-qualified, recursively.  Only modifiable lvalue expressions may be
+used as arguments to increment/decrement, and as left-hand arguments of
+assignment and compound assignment operators.
+
+The address of a non-lvalue expression cannot be taken.
+
+A **function designator** (the identifier introduced by a function declaration) is an
+expression of function type. When used in any context other than the
+address-of operator, sizeof, and \_Alignof (the last two generate compile errors when
+applied to functions), the function designator is always converted to a non-lvalue
+pointer to function. Note that the function-call operator is defined for pointers
+to functions and not for function designators themselves.
+
+*expr elements*: 
+id
+constant  
+string-literal  
+`sizeof` ( typename )  
+compound literal  
+
+A **full expression** is an expression that is not part of another expression
+or of a declarator:  
+
+— initalizer that is not part of a compound stat  
+— the expr in an expr stat  
+— the controlling expr of a selection stat (if or switch  
+— the controlling expr of a while or do stat  
+— each of the (optional) expr of a for sta  
+— the (optional) expr in a return stat  
+
+compound literals:
+provides an unnamed object
+whose value is given by the initializerlist
+ep.:
+
+`int *p = ( int [] ) { 2, 4};`  
+`int []` type-name
+
+Although the syntax of a compound literal is similar to a cast,
+the important distinction is that a cast is a non-lvalue expression while
+a compound literal is an lvalue.
+
+Preceding an expression by a parenthesized type name converts the value of the
+expression to the named type. This construction is called a **cast**.
+
+# Keywords
+
+```c
+bool
+int
+double
+long double
+float
+signed
+unsigned
+```
+
+# Identifiers
+
+can denote:
+
+object  
+function  
+tag or member of a structure, union or enumeration  
+typedef name  
+labels  
+macro name  
+macro parameter
+
+# main()
+
+```c
+int main(void) {}
+int main( int argc, char *argv[] ) {}
+```
+
+`argv[argc]` is null pointer  
+`argc` $\geq 0$  
+program name: `argv[0]`. If not available: `argv[0][0]`== null-character.  
+program parameters: `argv[1]` bis `argv[argc-1]`  
+
+# Character set
+
+**basic character set**:
+```text
+a-z A-Z 0-9 _
+! ? : ; .
+( ) { } [ ] < > ' "
++ - = \ | /
+^ * ~ & % #
+```
+space  
+horizontal-tab  
+vertical-tab  
+form-feed
+
+## Multibyte character
+
+Sequence of one or more bytes representing
+a member of the extended character set of either
+the source or the execution environment.
+
+# Translation Phases
+
+## Phase 1
+source character set.
+
+The source character set is a multibyte character set which includes the
+basic source character set as a single-byte subset.
+
+## Phase 2
+logical source lines.
+
+1) Whenever backslash appears at the end of a line (immediately followed
+by the newline character), both backslash and newline are deleted, combining two
+physical source lines into one logical source line. This is a single-pass
+operation, a line ending in two backslashes followed by an empty line
+does not combine three lines into one).
+
+2) If a non-empty source file does not end with a newline
+character after this step (whether it had no newline originally, or it
+ended with a backslash), the behavior is undefined.
+
+Phase 3  
+preprocessing tokens, sequences of whitespace characters.
+If the input stream has been parsed into preprocessing tokens up to a given character, the
+next preprocessing token is the longest sequence of characters that could constitute a
+preprocessing token.
+
+Phase 4  
+preprocessor directives, macro expansion, \_Pragma.
+
+Phase 5  
+execution character set.
+
+Phase 6  
+Adjacent string literal tokens are concatenated.
+
+Phase 7  
+Tokens. Translated as a translation unit.  if a preprocessing token could be
+converted to either a keyword or an identifier, it is converted to a keyword.
+a byte or code of value zero is appended to each multibyte character sequence
+that results from a string literal or literals.  The multibyte character
+sequence is then used to initialize an array of static storage duration and
+length just sufficient to contain the sequence.  For UTF−8 string literals, the
+array elements have type char, and are initialized with the characters of the
+multibyte character sequence, as encoded in UTF−8.  A preprocessing number does
+not have type or a value; it acquires both after a successful conversion to a
+floating constant token or an integer constant token.
+
+Phase 8  
+All external object and function references are resolved. Library components are
+linked to satisfy external references to functions and objects not defined in the
+current translation. Program image.
+
+# Preprocessing
+
+```c
+#define DST(name) name##_s name##_t
+DST(object);
+```
+=> "`object_s object_t;`"
+
+## preprocessing directives
+
+**group-part**\q *def*  
+if-section  
+control-line  
+text-line  
+`#` non-directive
+
+**ifsection**²q¹*def*  
+ifgr [ elifgr ]$_{nopt}$ [ `#` else \<nl\> [ grp ]$_{nopt}$ ]? `#` endif \<nl\>
+
+**elifgr**²q¹*def*  
+`#` elif cexpr \<nl\> [grp]$_{nopt}$
+
+**textline**²q¹*def*  
+ppts? \<nl\>
+
+**nondirective**²q¹*def*  
+ppts \<nl\>
+
+**control-line**\q*def*  
+`#` [  
+include [ \< or " ]<>[ \> or " ]  
+define id ppts$_{opts}$ \<nl\>  
+define id( [ idl$_{opt}$ or .. or idl,... ] ) ppts$_{opt}$ \<nl\>  
+undef id \<nl\>  
+line [ dseq \<nl\> or dseq " \\      scharseq$_{opt}$ " \<nl\>  
+(error or pragma) ppts$_{opt}$ \<nl\> ]  
+\<nl\> ]
+
+**ppnumber**\q*def*  
+[ . ]$_{opt}$ digit [  
+[ e or p ] [ - or + ]  
+letter  
+digit  
+underscore  
+period  
+]$_{nopt}$  
+
+**jumpstat**\q*def*  
+`continue ;`\q only in loop body  
+`break ;`\q in or as a switch body or loop body  
+`return` expr$_{opt}$ `;`
+
+## cpp
+
+operator `#`  
+Converts the next token to string.
+Can only be applied to a macro param.
+
+operator `##`  
+It will paste together two tokens
+to form a new one.
+
+# some
+
+```c
+#define DEBUG(fmt, ...) \
+printf(fmt, __VA_ARGS__);
+```
+
+# some
+
+`-M` `-MM` `-MF` file `-MG` `-MP`
+`-MT` target `-MQ` target `-MD` `-MMD`
+
+ppdirective:
+line starts with \#.
+Whitespace is allowed before and after the `#`
+
+not a punctuator: \@ \$ `` ` ``
+(with c compiler: all control characters other than NULL)
+
+end-of-line markers
+LF, CR, LF+CR
+
+backslashnewline
+text \textbackslash\\
+text
+
+# Type
+
+Each Object, function, and expression has a property called type, which determines the
+interpretation of the binary value stored in an object or evaluated by the expression.
+
+Types are partitioned into **object types** (types that describe objects) and
+**function types** (types that describe functions).
+
+At various points within a translation unit an object type may be
+**incomplete** (lacking sufficient information to determine the size of objects
+of that type) or **complete** (having sufficient information).
+
+-    void
+-    basic types
+-    enumerated types
+-    derived types
+
+The type char, the signed and unsigned integer types, and the floating types are
+collectively called the **basic types**. The basic types are complete object types.
+
+The three types char, signed char, and unsigned char are collectively called
+the **character types**. The implementation shall define char to have the same range,
+representation, and behavior as either signed char or unsigned char.
+
+`CHAR_MIN`, defined in limits.h, will have one of the values `0` or
+`SCHAR_MIN`, and this can be used to distinguish the two options.
+
+An **enumeration** comprises a set of named integer constant values. Each distinct
+enumeration constitutes a different enumerated type.
+
+A type is characterized by its **type category**, which is either the outermost
+derivation of a derived type, or the type itself if the type consists of no
+derived types.
+
+Each unqualified type has several qualified versions of its type, corresponding
+to the combinations of one, two, or all three of the `const`, `volatile`, and
+`restrict` qualifiers. The qualified or unqualified versions of a type are
+distinct types that belong to the same type category. A derived type is not
+qualified by the qualifiers (if any) of the type from which it is derived. The
+presence of the `_Atomic` qualifier designates an **atomic type**.
+
+The type designated as `float *` has type ‘‘pointer to float’’. Its type
+category is **pointer**, not a floating type. The const-qualified version of
+this type is designated as `float * const` whereas the type designated as
+`const float *` is not a qualified type — its type is *pointer to const-
+qualified float* and is a pointer to a qualified type.
+
+The type designated as  
+`struct tag (*[5])(float)`  
+has type ‘‘array of pointer to function returning struct tag’’. The array has
+length five and the function has a single parameter of type float. Its type
+category is **array**.
+
+Certain object representations need not represent a value of the object type.
+Such a representation is called a **trap representation**.
+
+**void** ²q¹
+Incomplete type that cannot be completed.
+
+**derived type** ²q¹
+array, structure, union, function or pointer type or a combination thereof.
+
+**list of type specifiers** ²q¹ *one of*  
+void,
+char,
+short,
+unsigned short,
+int,
+unsigned,
+long,
+unsigned long,
+long long,
+unsigned long long,
+float,
+double,
+long double,
+\_Bool,
+struct-or-union specifier,
+enum specifier,
+typedef name
+
+There are five standard signed integer types, designated as `signed char, short
+int, int, long int`, and `long long int`. (These and other types may be
+designated in several additional ways.)
+
+A computation involving unsigned operands can never overflow,
+because a result that cannot be represented by the resulting unsigned integer type is
+reduced modulo the number that is one greater than the largest value that can be
+represented by the resulting type.
+
+# operators
+
+The operand of the unary `*` operator shall have pointer type.
+
+The unary `&` operator yields the address of its operand. If the operand has type ‘‘type’’,
+the result has type ‘‘pointer to type’’.
+
+The unary `*` operator denotes indirection. If the operand points to a
+function, the result is a function designator; if it points to an object, the
+result is an lvalue designating the object. If the operand has type ‘‘pointer
+to type’’, the result has type ‘‘type’’.  the unary `*` that is implied by the []
+is evaluated and the result is as if the `&` operator were removed and the []
+operator were changed to a + operator.
+
+The `sizeof` operator yields the size (in bytes) of its operand, which may be
+an expression or the parenthesized name of a type.  If the type of the operand
+is a variable length array type, the operand is evaluated; otherwise, the
+operand is not evaluated and the result is an integer constant.
+
+`&`\quad "address-of" operator, which generates
+a pointer to its operand.
+
+`* / \%`\quad multiplicativ
+
+`+ -`\quad additive
+
+`< > <= >=`\quad relational
+
+`== !=`\quad equality
+
+`&& ||`\quad logical AND, OR
+
+`= *= /= \%= += -= <<= >>= &= ^= |=`  
+assignment
+
+An assignment operator shall have a modifiable lvalue as its left operand.
+
+## unary
+`& * + - !`  
+`~`\quad bitwise complement  
+
+## binary
+`<< >> & ^ |`\quad bitwise  
+`+`
+
+## Di
+`( )`\quad grouping parantheses  
+`[ ]`\quad subscripting brackets  
+`( )`\quad function call parantheses  
+`? :`\quad conditional operator
+
+`.` operator  
+`->` operator
+
+comma operator "`,`" :
+
+the left operand of a comma operator is evaluated
+as a void expression; there is a sequence point after
+its evaluation. Then the right operand is evaluated;
+the result has its type and value. (A comma operator
+does not yield an lvalue.)
+
+# Enumeration
+
+A member of an enumeration is called an **enumeration constant**.
+
+If the first enumerator has no '=',
+the value of its enumeration constant is 0.
+Each subsequent enumerator with no =
+defines its enumeration constant as the value of the
+constant expressin obtained by adding 1 to the value
+of the previous enumeration constant. (The use of
+enumerators with = may produce enumeration constants
+with values that dublicate other values in the same enumeration.)
+
+# type-name
+
+`int`\q int  
+`int *`\q pointer to int  
+`int *[3]`\q array of three pointer to int  
+`int (*)[3]`\q pointer to an array of three ints  
+`int (*)[*]`\q pointer to a variable length array of an unspecified number of ints  
+`int *()`\q function with no parameter specification returning a pointer to int  
+`int (*)(void)`\q pointer to function with no parameter returning an int  
+`int (*const [])(unsigned int,...)`\q array of an
+unspecified number of constant pointer to functins, each
+with one parameter that has type unsigned int and an
+unspecified number of other parameters, returning an int.
+
+# scope
+
+Region of program text.
+
+Four kind of name spaces:
+Function, file, block and function prototype.
+
+Function prototype scope:
+The scope of a name introduced in the parameter list of a
+function declaration that is not a definition ends at the end of
+the function declarator.
+
+Within a scope, an identifier may designate more than one entity only
+if the entities are in different name spaces.
+
+A label name is the only kind of identifier that has function scope. It can be used (in a
+goto statement) anywhere in the function in which it appears, and is declared implicitly
+by its syntactic appearance (followed by a : and a statement).
+
+# lifetime
+
+For the objects with allocated storage duration, the lifetime begins when the
+allocation function returns (including the return from realloc) and ends when the
+realloc or deallocation function is called. Note that since allocated objects have
+no declared type, the type of the lvalue expression first used to
+access this object becomes its effective type.
+
+# linkage
+
+external  
+internal  
+none  
+
+An identifier declared in different scopes or in the same scope more than once can be
+made to refer to the same object or function by a process called linkage.
+
+In the set of translation units and libraries that constitutes an entire
+program, each declaration of a particular identifier with external linkage
+denotes the same object or function. Within one translation unit, each
+declaration of an identifier with internal linkage denotes the same object or
+function. Each declaration of an identifier with no linkage denotes a unique
+entity.
+
+If the declaration of a file scope identifier for an object or a function
+contains the storage- class specifier `static`, the identifier has internal
+linkage.
+
+For an identifier declared with the storage-class specifier extern in a scope
+in which a prior declaration of that identifier is visible, if the prior
+declaration specifies internal or external linkage, the linkage of the
+identifier at the later declaration is the same as the linkage specified at the
+prior declaration. If no prior declaration is visible, or if the prior
+declaration specifies no linkage, then the identifier has external linkage.
+
+If the declaration of an identifier for a function has no storage-class
+specifier, its linkage is determined exactly as if it were declared with the
+storage-class specifier extern. If the declaration of an identifier for an
+object has file scope and no storage-class specifier, its linkage is external.
+
+The following identifiers have no linkage: an identifier declared to be
+anything other than an object or a function; an identifier declared to be a
+function parameter; a block scope identifier for an object declared without the
+storage-class specifier extern.
+
+\subsection{universal character name}
+
+Universal character names may be used in identifiers, character constants, and string
+literals to designate characters that are not in the basic character set.
+
+# syntax
+
+## literal
+
+`\`octal digits, höchstens drei  
+`\x` hexadecimal digits  
+`L` unsigned wchar\_t  
+`u` char16\_t  
+`U` char32\_t  
+
+A **character string literal** is a sequence of zero or more multibyte
+characters enclosed in double-quotes, as in "xyz". A UTF −8 string literal is
+the same, except prefixed by u8.  A wide string literal is the same, except
+prefixed by the letter `L`, `u`, or `U`.
+
+# Constants
+
+An **integer constant** begins with a digit, but has no period or exponent
+part. It may have a prefix that specifies its base and a suffix that specifies
+its type.
+
+A **floating constant** has a significand part that may be followed by an
+exponent part and a suffix that specifies its type. The components of the
+significand part may include a digit sequence representing the whole-number
+part, followed by a period (`.`), followed by a digit sequence representing the
+fraction part. The components of the exponent part are an `e`, `E`, `p`, or `P`
+followed by an exponent consisting of an optionally signed digit sequence.
+Either the whole-number part or the fraction part has to be present; for
+decimal floating constants, either the period or the exponent part has to be
+present.
+
+The value of a **wide character constant** containing a single multibyte
+character that maps to a single member of the extended execution character set
+is the wide character corresponding to that multibyte character, as defined by
+the mbtowc, mbrtoc16, or mbrtoc32 function as appropriate for its type, with an
+implementation-defined current locale.
+
+# comments
+
+Except within a character constant, a string literal, or a comment, the
+characters `/*` introduce a comment. The contents of such a comment are
+examined only to identify multibyte characters and to find the characters `*/`
+that terminate it.
+
+Except within a character constant, a string literal, or a comment, the
+characters `//` introduce a comment that includes all multibyte characters up
+to, but not including, the next new-line character. The contents of such a
+comment are examined only to identify multibyte characters and to find the
+terminating new-line character.
+
+# array
+
+A postfix expression followed by an expression in square brackets `[]` is a
+subscripted designation of an element of an array object.  Successive subscript
+operators designate an element of a multidimensional array object.
+
+# struct, union
+
+The first operand of the `.` operator shall have an atomic, qualified, or
+unqualified structure or union type, and the second operand shall name a member
+of that type.  The first operand of the `->` operator shall have type ‘‘pointer
+to atomic, qualified, or unqualified structure’’ or ‘‘pointer to atomic,
+qualified, or unqualified union’’, and the second operand shall name a member
+of the type pointed to.
+
+If `f` is a function returning a structure or union, and `x` is a member of
+that structure or union, `f().x` is a valid postfix expression but is not an
+lvalue.
+
+# some
+
+A conditional expression does not yield an lvalue.
+
+An assignment expression has the value of the left operand after the
+assignment, but is not an lvalue. The type of an assignment expression is the
+type the left operand would have after lvalue conversion.
+
+The left operand of a comma operator is evaluated as a void expression A comma
+operator does not yield an lvalue.
+
+A **constant expression** can be evaluated during translation rather than
+runtime, and accordingly may be used in any place that a constant may be.
+Constant expressions shall not contain assignment, increment, decrement,
+function-call, or comma operators, except when they are contained within a
+subexpression that is not evaluated.
+
+If an identifier for an object is declared with no linkage, the type for the
+object shall be complete by the end of its declarator, or by the end of its
+init-declarator if it has an initializer; in the case of function parameters
+(including in prototypes), it is the adjusted type that is required to be
+complete.
+
+At most, one storage-class specifier may be given in the declaration specifiers in a
+declaration, except that `_Thread_local` may appear with `static` or `extern`.
+
+A declaration of an identifier for an object with storage-class specifier
+`register` suggests that access to the object be as fast as possible. The
+extent to which such suggestions are effective is implementation-defined.  The
+only operators that can be applied to an array declared with storage-class
+specifier register are `sizeof` and `_Alignof`.
+
+The declaration of an identifier for a function that has block scope shall have
+no explicit storage-class specifier other than `extern`.
+
+At least one type specifier shall be given in the declaration specifiers in
+each declaration, and in the specifier-qualifier list in each struct
+declaration and type name.
+
+A struct-declaration that does not declare an anonymous structure or anonymous union
+shall contain a struct-declarator-list.
+
+The presence of a struct-declaration-list in a struct-or-union-specifier
+declares a new type, within a translation unit. The struct-declaration-list is
+a sequence of declarations for the members of the structure or union.
+
+A bit-field declaration with no declarator, but only a colon and a width,
+indicates an unnamed bit-field. As a special case, a bit-field structure member
+with a width of 0 indicates that no further bit-field is to be packed into the
+unit in which the previous bit- field, if any, was placed.
+
+An unnamed member whose type specifier is a structure specifier with no tag is
+called an anonymous structure; an unnamed member whose type specifier is a
+union specifier with no tag is called an **anonymous union**.
+
+After the declaration:  
+`struct s { int n; double d[]; };`  
+the structure struct `s` has a flexible array member d. A typical way to use this is:  
+`int m =` *some value* `;`  
+`struct s *p = malloc(sizeof (struct s) + sizeof (double [m]));`  
+and assuming that the call to malloc succeeds, the object pointed to by p behaves, for most purposes, as if
+p had been declared as:  
+`struct { int n; double d[m]; } *p;`
+
+The expression that defines the value of an enumeration constant shall be an integer
+constant expression that has a value representable as an int.
+
+If the first enumerator has no =, the value of its enumeration constant is 0.
+Each subsequent enumerator with no = defines its enumeration constant as the
+value of the constant expression obtained by adding 1 to the value of the
+previous enumeration constant.
+
+The properties associated with qualified types are meaningful only for
+expressions that are lvalues.  If the same qualifier appears more than once in
+the same specifier-qualifier-list, either directly or via one or more typedefs,
+the behavior is the same as if it appeared only once.
+
+Function specifiers shall be used only in the declaration of an identifier for
+a function.  A function specifier may appear more than once; the behavior is
+the same as if it appeared only once.
+
+If, in the nested sequence of declarators in a full declarator, there is a
+declarator specifying a variable length array type, the type specified by the
+full declarator is said to be variably modified. Furthermore, any type derived
+by declarator type derivation from a variably modified type is itself variably
+modified.
+
+If an identifier is declared as having a variably modified type, it shall be an
+ordinary identifier, have no linkage, and have either block scope or function
+prototype scope. If an identifier is declared to be an object with static or
+thread storage duration, it shall not have a variable length array type.
+
+The only storage-class specifier that shall occur in a parameter declaration is
+`register`.
+
+An identifier list in a function declarator that is not part of a definition of
+that function shall be empty.  If the list terminates with an ellipsis (, ...),
+no information about the number or types of the parameters after the comma is
+supplied.  The special case of an unnamed parameter of type void as the only
+item in the list specifies that the function has no parameters.
+
+If a typedef name specifies a variably modified type then it shall have block scope.
+
+If the declaration of an identifier has block scope, and the identifier has
+external or internal linkage, the declaration shall have no initializer for the
+identifier.
+
+A `case` or `default` label shall appear only in a switch statement.
+
+The expression in an expression statement is evaluated as a void expression for
+its side effects.  If a function call is evaluated as an expression statement
+for its side effects only, the discarding of its value may be made explicit by
+converting the expression to a void expression by means of a cast:
+
+```c
+int
+p(int);
+/* ... */
+(void)p(0);
+```
+
+A null statement may also be used to carry a label just before the closing `}`
+of a compound
+
+```c
+while (loop1) {
+/* ... */
+while (loop2) {
+/* ... */
+if (want_out)
+goto end_loop1;
+/* ... */
+}
+/* ... */
+end_loop1: ;
+}
+```
+
+The expression of each case label shall be an integer constant expression and
+no two of the case constant expressions in the same switch statement shall have
+the same value after conversion. There may be at most one default label in a
+switch statement.  (Any enclosed switch statement may have a default label or
+case constant expressions with values that duplicate case constant expressions
+in the enclosing switch statement.)
+
+The declaration part of a for statement shall only declare identifiers for
+objects having storage class auto or register.
+
+A continue statement shall appear only in or as a loop body.
+
+A break statement shall appear only in or as a switch body or loop body.
+
+The storage-class specifiers auto and register shall not appear in the declaration
+specifiers in an external declaration.
+
+There shall be no more than one external definition for each identifier
+declared with internal linkage in a translation unit. Moreover, if an
+identifier declared with internal linkage is used in an expression (other than
+as a part of the operand of a `sizeof` or `_Alignof` operator whose result is
+an integer constant), there shall be exactly one external definition for the
+identifier in the translation unit.
+
+An **external definition** is an external declaration that is also a definition of
+a function (other than an inline definition) or an object. If an identifier
+declared with external linkage is used in an expression (other than as part of
+the operand of a `sizeof` or `_Alignof` operator whose result is an integer
+constant), somewhere in the entire program there shall be exactly one external
+definition for the identifier; otherwise, there shall be no more than one.
+
+if an identifier declared with external linkage is not used in an expression,
+there need be no external definition for it.
+
+## function definition
+
+If the declarator includes a parameter type list, the declaration of each
+parameter shall include an identifier, except for the special case of a
+parameter list consisting of a single parameter of type void, in which case
+there shall not be an identifier. No declaration list shall follow.
+
+If the declarator includes an identifier list, each declaration in the
+declaration list shall have at least one declarator, those declarators shall
+declare only identifiers from the identifier list, and every identifier in the
+identifier list shall be declared. An identifier declared as a typedef name
+shall not be redeclared as a parameter. The declarations in the declaration
+list shall contain no storage-class specifier other than register and no
+initializations.
+
+The declarator in a function definition specifies the name of the function
+being defined and the identifiers of its parameters. If the declarator includes
+a parameter type list, the list also specifies the types of all the parameters;
+such a declarator also serves as a function prototype for later calls to the
+same function in the same translation unit.
+
+If the declarator includes an identifier list, the types of the parameters
+shall be declared in a following declaration list.
+
+Each parameter has automatic storage duration; its identifier is an lvalue.
+
+A parameter identifier cannot be redeclared in the function body except in an
+enclosed block.
+
+```c
+extern int max(a, b)
+int a, b;
+{
+return a > b ? a : b;
+}
+```
+Here int a, b; is the declaration list for the parameters. The difference
+between these two definitions is that the other form acts as a prototype
+declaration that forces conversion of the arguments of subsequent calls to the
+function, whereas this form does not.
+
+The use of function definitions with separate parameter identifier and
+declaration lists (not prototype-format parameter type and identifier
+declarators) is an obsolescent feature.
+
+To pass one function to another, one might say
+```c
+int f(void);
+/* ... */
+g(f);
+```
+Then the definition of g might read
+```c
+void g(int (*funcp)(void))
+{
+/* ... */
+(*funcp)(); /* or funcp(); ... */
+}
+```
+or, equivalently,
+```c
+void g(int func(void))
+{
+/* ... */
+func(); /* or (*func)(); ... */
+}
+```
+
+# preprocessing
+
+A *preprocessing directive* consists of a sequence of preprocessing tokens that
+satisfies the following constraints: The first token in the sequence is a `#`
+preprocessing token that (at the start of translation phase 4) is either the
+first character in the source file (optionally after white space containing no
+new-line characters) or that follows white space containing at least one
+new-line character. The last token in the sequence is the first new-line
+character that follows the first token in the sequence.
+
+A text line shall not begin with a `#` preprocessing token. A non-directive shall
+not begin with any of the directive names appearing in the syntax.
+
+When in a group that is skipped, the directive syntax is relaxed to allow any
+sequence of preprocessing tokens to occur between the directive name and the
+following new-line character.
+
+The only white-space characters that shall appear between preprocessing tokens
+within a preprocessing directive (from just after the introducing `#`
+preprocessing token through just before the terminating new-line character) are
+space and horizontal-tab (including spaces that have replaced comments or
+possibly other white-space characters in translation phase 3).
+
+Each `#` preprocessing token in the replacement list for a function-like macro
+shall be followed by a parameter as the next preprocessing token in the
+replacement list.
+
+If, in the replacement list, a parameter is immediately preceded by a `#`
+preprocessing token, both are replaced by a single character string literal
+preprocessing token that contains the spelling of the preprocessing token
+sequence for the corresponding argument. Each occurrence of white space between
+the argument’s preprocessing tokens becomes a single space character in the
+character string literal. White space before the first preprocessing token and
+after the last preprocessing token composing the argument is deleted.
+Otherwise, the original spelling of each preprocessing token in the argument is
+retained in the character string literal, except for special handling for
+producing the spelling of string literals and character constants: a \
+character is inserted before each " and \ character of a character constant or
+string literal (including the delimiting " characters), except that it is
+implementation-defined whether a \ character is inserted before the \ character
+beginning a universal character name. If the replacement that results is not a
+valid character string literal, the behavior is undefined. The character string
+literal corresponding to an empty argument is "".
+
+The order of evaluation of `#` and `##` operators is unspecified.
+
+A `##` preprocessing token shall not occur at the beginning or at the end of a
+replacement list for either form of macro definition.
+
+If, in the replacement list of a *function-like macro*, a parameter is
+immediately preceded or followed by a `##` preprocessing token, the parameter is
+replaced by the corresponding argument’s preprocessing token sequence; however,
+if an argument consists of no preprocessing tokens, the parameter is replaced
+by a placemarker preprocessing token instead. Placemarker preprocessing tokens
+do not appear in the syntax because they are temporary entities that exist only
+within translation phase 4.
+
+For both object-like and function-like macro invocations, before the
+replacement list is reexamined for more macro names to replace, each instance
+of a `##` preprocessing token in the replacement list (not from an argument) is
+deleted and the preceding preprocessing token is concatenated with the
+following preprocessing token. Placemarker preprocessing tokens are handled
+specially: concatenation of two placemarkers results in a single placemarker
+preprocessing token, and concatenation of a placemarker with a non-placemarker
+preprocessing token results in the non-placemarker preprocessing token.  If the
+result is not a valid preprocessing token, the behavior is undefined. The
+resulting token is available for further macro replacement.
+
+After all parameters in the replacement list have been substituted and `#` and `##`
+processing has taken place, all placemarker preprocessing tokens are removed.
+The resulting preprocessing token sequence is then rescanned, along with all
+subsequent preprocessing tokens of the source file, for more macro names to
+replace.
+
+If the name of the macro being replaced is found during this scan of the
+replacement list (not including the rest of the source file’s preprocessing
+tokens), it is not replaced.  Furthermore, if any nested replacements encounter
+the name of the macro being replaced, it is not replaced. These nonreplaced
+macro name preprocessing tokens are no longer available for further replacement
+even if they are later (re)examined in contexts in which that macro name
+preprocessing token would otherwise have been replaced.
+
+The resulting completely macro-replaced preprocessing token sequence is not
+processed as a preprocessing directive even if it resembles one, but all pragma
+unary operator expressions within it are then processed.
+
+`#pragma once`  
+serves the same purpose as include guards
+
+# Library
+
+## assert
+Diagnostic
+
+## complex
+Complex arithmetic
+
+## ctype
+character handling
+
+## errno
+errors
+
+## fenv
+environment (floating point)
+
+## float
+characteristics of floating types 5.2.4.2.2
+
+## inttypes
+format conversion of integer types
+
+## iso646
+alternative spellings
+
+## limits
+sizes of integer types 5.2.4.2.1
+
+## locale
+localization
+
+## math
+mathematics
+
+## setjmp
+nonlocal jumps
+
+## signal
+signal handling
+
+## stdalign
+alignment
+
+## stdatomic
+atomics
+
+## stdbool
+boolean types and values
+
+## stddef
+common definitions
+
+## stding
+integer types
+
+## stdio
+input output
+
+## stdlib
+general utilities
+
+## stdnoreturn
+macro: noreturn expands to \texttt{\_Noreturn}
+
+## string
+string handling
+
+## tgmath
+type-generic math
+
+## threads
+threads
+
+## time
+date and time
+
+## uchar
+unicode utilities
+
+## wchar
+extended multibyte and wide character utilities
+
+## wctype
+wide character classification and mapping utilities
+
+# Data structures
+
+## union
+
+`union { int x; char c[4]; }`  
+`u = {1},`  
+makes u.x active with value 1  
+`u2 = { .c={'\1'} };`  
+makes u2.c active with value `{'\1', '\0', '\0', '\0'}`  
+
+## struct
+
+`struct fred { char s[4]; int n; };`  
+inits `x[0]` to `{ {'a','b','c','\0'}, 1 }`  
+
+```c
+//changes `x[0]` to `{ {'q','b','c','\0'}, 1 }
+struct fred x[ ] = { { { "abc" }, 1 },
+  [0].s[0] = 'q'
+//inits `x[0]` to `{ {'a','b','c','\0'}, 1 }
+};
+```
+
+```c
+//current object is now the entire `x[0]` object
+struct fred y[ ] = { { { "abc" }, 1 },
+
+  [0] = {
+//replaces `x[0]` with `{ {'q','\0','\0','\0'}, 0 }
+  q`.s[0] = 'q'`
+  }
+};
+```
+
+# gnu gsl
+
+```c
+gsl-config --libs
+gsl-config -cflags
+
+gsl_complex gsl_complex_rect(double x, doubley)
+gsl_complex gsl_complex_polar(double r, double theta)
+
+GSL_REAL(z)
+GSL_IMAG(z)
+GSL_SET_COMPLEX(zp, x, y) # GSL_SET_COMPLEX(&z, 3 4)
+GSL_SET_REAL(zp, x)
+GSL_SET_IMAG(zp, y)
+M_E
+M_PI
+GSL_POSINF
+GSL_NEGINF
+GSL_NAN
+gsl_isnan(const double x)
+gsl_isinf(const double x)
+gsl_finite(const double x)
+int gsl_fcmp(double x, double y, double epsilon)
+```
+
+## Vector and matrix
+
+```c
+gsl_vector.h
+gsl_matrix.h
+
+gsl_vector * gsl_vector_calloc( size_t n)
+gsl_vector * gsl_matrix_calloc( size_t n1, size_t n2)
+```
+
+n1 rows, n2 columns
+
+`void ...free( gls_vector * v)`  
+or matrix
+
+```c
+double ...get( const gsl_vector *, size_t i)
+void ...set( gsl_vector * v, size_t i, double x)
+double * ...ptr( gsl_vector * v, size_t i)
+const double * ...const_ptr( const gsl_vector * v, size_t i)
+void ...set_all( gsl_vector * v, double x)
+void ...set_zero( gsl_vector * v)
+int ...set_basis( gsl_vector * v, size_t i)
+int ...memcpy( gsl_vector * dest, gsl_vector * src)
+int ...swap( gsl_vector * v, gsl_vector * w)
+int ...swap_elements( gsl_vector * v, size_t i, size_t j)
+```
+
+## SVD
+
+$$A=U_{m\times n} S_{n\times n} V_{n\times n}^T$$
+
+Mathematically the "full" SVD is defined with
+$U_{m\times }$ and $S_{m\times n}$ (with additional
+rows of zero).
+
+$m\geq n$
+
+```c
+int gsl_linalg_SV_decomp( gsl_matrix * A, gsl_vector * S, gsl_vector * work)
+```
+work: length $n$.
+
+On output the matrix $A$ is replaced by $U$.
+The matrix $V$ contains the elements of $V$ (in untransposed form).
+
+```c
+int gls_linalg_SV_solve(
+  const gsl_matrix * U,
+  const gsl_matrix * V,
+  const gsl_vector * S,
+  const gsl_vector * b,
+  gsl_vector * x)
+```
+
+Solves the system $Ax=b$
+using the singular value decomposition $(U,S,V)$ of $A$.
+
+Other singular values can be edited out
+by setting them to zero before calling the function.
+
+In the over\_determined case where $A$ has more
+rows than columns the system is solved in the
+leas square sense, returning the solution $x$ which
+minimizes $||Ax-b||_2$
+
+```bash
+$ gcc -c file.c
+$ gcc -L/usr/local/atlas/lib file.o -lgsl -lcblas -latlas -lm
+```

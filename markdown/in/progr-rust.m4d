@@ -1,0 +1,44 @@
+# rust
+
+rustup update
+
+Rust gives you the following ways to lay out composite data:
+structs (named product types)
+tuples (anonymous product types)
+arrays (homogeneous product types)
+enums (named sum types -- tagged unions)
+unions (untagged unions)
+
+# lang
+
+Result
+Ok Err
+
+Ordering
+Less Greater Equal
+
+# ---
+
+cargo new myname
+cargo watch -q -c -x 'run -q'
+
+```rust
+let z = "123";                         
+let z_number: i32 = z.parse().unwrap();
+
+let point3d = (1, 10, 0);
+println!("value of point3d: {:?}", point3d);
+
+let c = [0, 3, 5, 7];
+
+for element in c.iter() {
+    println!("b: {}", element);
+    if element == &5 {
+        break;
+    }
+}
+
+for number in 0..4 {
+  println!("{}", c[number]);
+}
+```

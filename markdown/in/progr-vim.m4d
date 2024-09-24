@@ -1,0 +1,37 @@
+# vim
+
+```txt
+:mks! file.vim  
+vim -S file.vim
+```
+
+## Emmet
+
+`>` nest  
+`+` `^`
+`*`*N* `()`  
+`#` id   
+`.` class  
+`[]` attribute  
+`$` `$$$` autoindex  
+`{}`
+
+$@N
+
+## ---
+
+c-x c-]
+c-x c-n
+c-x c-l
+c-x c-f
+
+c-n
+c-p
+
+send-to-term
+
+## sandwich
+
+sdt
+saipt
+srtt
