@@ -22,7 +22,8 @@ storage duration, linkage).
 The declarations that define all properties required to use
 an entity are **definitions**.
 
-An object declaration (outside a class) is also a definition unless it contains an extern specifier and no initializer:
+An object declaration (outside a class) is also a definition
+unless it contains an extern specifier and no initializer:
 
 ```cpp
 int i; // definition
@@ -38,6 +39,18 @@ a type.
 
 An **object** is some memory that holds a value of a given type.
 A **value** is a set of bits in memory interpreted according to a type.
+
+# function templates
+
+```cpp
+template <typename T> // this is the template parameter declaration
+T max(T x, T y) // this is the function template definition for max<T>
+{
+    return (x > y) ? x : y;
+}
+
+max<int>(1, 2); // instantiates and calls function max<int>(int, int)
+```
 
 # Variadic templates
 
@@ -62,8 +75,8 @@ std::string s1 = "x", s2 = "aa", s3 = "bb", s4 = "yy";
 std::string ssum = adder(s1, s2, s3, s4);
 ```
 
-`typename... Args` is called a template parameter pack, and
-`Args... args` is called a function parameter pack (Args is,
+`typename... Args` is called a **template parameter pack**, and
+`Args... args` is called a **function parameter pack** (Args is,
 of course, a completely arbitrary name and could be anything
 else).
 
@@ -256,7 +269,7 @@ unordered_multiset
 unordered_map  
 unordered_multimap  
 
-# Algorithms
+## Algorithms
 
 Standard Template Library: Algorithms The header
 `<algorithm>` defines a collection of functions especially
@@ -406,7 +419,7 @@ Test if range is heap (function template )
 
 # libraries
 
-fmt
+## fmt
 
 ```cpp
 #include <vector>
@@ -427,21 +440,7 @@ int main() {
 }
 ```
 
-## function template
-
-```cpp
-template <typename T> // this is the template parameter declaration
-T max(T x, T y) // this is the function template definition for max<T>
-{
-    return (x > y) ? x : y;
-}
-
-max<int>(1, 2); // instantiates and calls function max<int>(int, int)
-```
-
-# ---
-
-sudo apt-get install libfmt-dev
+`sudo apt-get install libfmt-dev`
 
 ```cpp
 #include <iostream>
@@ -451,6 +450,8 @@ int main(int argc, char* argv[]) {
     std::cout << fmt::format("Hello {}", "World") << std::endl;
 };
 ```
+
+# Compile
 
 add.cpp
 ```cpp
@@ -531,30 +532,5 @@ int& use_count()
   std::list<int>::iterator it;
   for (i=0, it=l.begin(); it!=l.end(); i++, it++)
     std::cout << i << ": " << *it << std::endl;
-};
-```
-
-```cpp
-#include <iostream>
-#include <list>
-#include <thread>
-#include <fmt/core.h>
-
-template<typename T>
-T adder(T v) {
-    return v;
-}
-
-template<typename T, typename... Args>
-T adder(T first, Args... args) {
-    return first + adder(args...);
-}
-
-int main(int argc, char* argv[]) {
-    long sum = adder(1,2,3,4,5);
-    std::string s1 = "a", s2 = "b";
-    std::string ssum = adder(s1, s2);
-
-    fmt::print("res: {}, {}", sum, ssum);
 };
 ```
