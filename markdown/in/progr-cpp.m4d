@@ -40,6 +40,16 @@ a type.
 An **object** is some memory that holds a value of a given type.
 A **value** is a set of bits in memory interpreted according to a type.
 
+An **expression** computes a value from a number of operands.
+The simplest expression is simply a literal value.
+
+# Statements
+
+An **expression statement** is an expression followed by a semicolon.
+It is typically an assignment, a I/O statement, or a function call.
+
+A sequence of statements delimited by curly braces is called a **block statement** or a **compound statement**.
+
 # function templates
 
 ```cpp

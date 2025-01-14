@@ -53,7 +53,7 @@ Phase transition
 Solubility  
 Reactivity  
 
-In equilibrium, the **electrochemical potential** [\si{\J/\mol}] will be
+In equilibrium, the **electrochemical potential** [J/mol] will be
 constant everywhere for each species (it may have different value for different
 species).
 
@@ -110,15 +110,15 @@ can occur.
 \schemestop
 :::
 
-\pKa = 3.8
+$\text{pK}_\text{a}$ = 3.8
 
 Salts of small highly charged metal cations are acidic.
 
-(\pKa)
-$\ce{Fe3+}$ 2.2\quad
-$\ce{Cr3+}$ 3.8\quad
-\ce{Al3+} 5.0\quad
-\ce{Cu2+} 8.3
+($\text{pK}_\text{a}$)  
+$\ce{Fe3+}$ 2.2 $\quad$
+$\ce{Cr3+}$ 3.8 $\quad$
+$\ce{Al3+}$ 5.0 $\quad$
+$\ce{Cu2+}$ 8.3
 
 # Atom
 
