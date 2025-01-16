@@ -1,0 +1,113 @@
+# Intro
+
+$S, X, Y$, Sets  
+$\mathcal{P}$, power set
+
+closure $\text{cl}: \mathcal{P}(S) \to \mathcal{P}(S)$
+
+$\forall X,Y \subseteq S$
+
+— $X \subseteq \text{cl}(X)$ (extensive)
+
+— $X \subseteq Y ⟹ \text{cl}(X) \subseteq \text{cl}(Y)$ (increasing, isotone)
+
+— $\text{cl}(\text{cl}(X)) = \text{cl}(X)$ (idempotent)
+
+$E$ finite set
+
+A **matroid closure operator** on $E$ is a closure operator satisfying
+in addition the exchange axiom.
+
+if $e\in \text{cl}(A)$ but $e\in \text{cl}(A\cup f)$, then
+$f \in \text{cl}(A\cup e)$
+
+A **matroid** is a set $E$ together with a matroid closure oparator.
+
+A closed subset of $M$ (i.e. a set that is its own closure) is called
+a **flat** of $M$.
+
+independent sets
+
+$\mathcal{I} =  \lbrace X \subseteq E:$
+$\exists B \in \mathcal{B}$
+s.t.
+$X\subseteq B \rbrace$
+
+$\mathcal{I} \subseteq 2^E$
+
+$\mathcal{C} = \lbrace X \cup E : X \in 2^E - \mathcal{I}, X$
+is minimal
+$\rbrace$
+
+$E(M)$, ground set
+
+$M$ matroid, $(E, \mathcal{I})$
+
+(1) $\emptyset \in \mathcal{I}$
+
+(2) for every set $F \in \mathcal{I}$, $\mathcal{I}$ must
+contain all subsets of $F$
+
+(3) if $F$ and $F'$ are independnt sets satisfying
+$|F| < |F'|$, then there exists $x\in F' \smallsetminus F$
+s.t. $F\cup \{x\} \in \mathcal{I}$
+
+example:
+
+$E$ = \{ 1,2,3,4,5\}  
+$\mathcal{B}$ = $\lbrace$ \{1,3\}, \{1,5\}, \{3,4\}, \{4,5\}, \{3,5\} $\rbrace$  
+$\mathcal{I}$ = \{ $\emptyset$, \{1\}, \{3\}, \{4\}, \{5\} \} $\cup \mathcal{B}$  
+$\mathcal{C}$ = \{ \{2\}, \{1,4\}, \{3,4,5\}, \{1,3,5\} \}  
+
+$$
+A_E = 
+\begin{bmatrix} -1 & 0 & -1 & -1 & 0
+²nn¹ ²nn¹ 2 & 0 & 1 & 2 & 1
+²nn¹ ²nn¹ \end{bmatrix}
+$$
+
+{{< figure src="data/graph.svg" >}}
+
+matroids: $(E,\mathcal{B}); (E,\mathcal{I}); (E,\mathcal{C})$
+
+A minimal dependent set is called a **circuit**.
+
+$C(M)$ set of all circuits. $C(M)$ uniquely determines $M$.
+
+connected graph -> graphic matroid
+vector matroid
+binary
+regular
+transversal matroid
+simple
+free
+
+branch-width
+amalgamation
+2-sum
+3-connected
+
+$M \mid A$ restriction of $M$ to $A$
+
+$M / A$ the matroid on the set difference $S\text{\ } A$ obtained by contracting
+$A$ from $M$.
+
+the **rank** of a set $F$, denoted by $r(F)$, is the size of the largest
+independent subset of $F$.
+
+If $F \subseteq E(M)$, then the **closure** operator $\text{cl}(F)$ is defined
+as $\text{cl}(F) := \{ x : r(F \cup \{x\}) = r(F) \}$
+
+A set $F$ such that $\text{cl}(F)=F$ is called a **flat** of $M$.
+
+$L(M)$, posets of flats of $M$
+
+#### multiple ciclic exchange property
+
+For every bases $B_1, \dots,B_k$ of a matroid and a subset $A_1\subset B_1$ there
+exists subsets $A_2 \subset B_2,\dots,A_k\subset B_k$ s.t. all sets $(B_i\setminus A_i)\cup A_{i-1}$
+achieved by a cyclic shift of $A_i$'s by one are bases.
+
+# ---
+
+Binary matroids generalize undirected graphs.

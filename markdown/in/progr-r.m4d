@@ -327,3 +327,11 @@ https://github.com/tensorflow/tensorflow/issues/42738
 ```r
 source("file")
 ```
+
+# debian
+
+r-base
+r-base-dev
+libatlas3-base
+
+R> update.packages(.libPaths()[1])

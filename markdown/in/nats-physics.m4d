@@ -1,0 +1,1533 @@
+# Intro
+
+Physics is dynamics in spaces.
+Higher topos theory provides the formalizations of this most fundamental aspect of physics.
+
+For a closed system the **Hamiltonian** is the sum of the kinetic (T) and potential (V) energy in the system.
+
+# Schrödinger Equation
+
+$H\psi(x) = E\psi(x)$
+
+$\psi(x)$, wavefunction of the system  
+$H$, Hamilton operator  
+$E$, Energy of the system
+
+$\displaystyle
+E=\frac{p^2}{2m} + V(x)
+$
+
+$V(x)$ potential Energy
+
+$\displaystyle
+i\hbar \frac{\partial \psi}{\partial t} = E\psi
+$
+
+$\displaystyle
+-\frac{\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2} = \frac{p^2}{2m} \psi
+$
+
+Schrödinger eq for a particle in a potential field (1926):
+
+$\displaystyle
+i\hbar \frac{\partial \psi}{\partial t} = - \frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} +
+V(x)\psi
+$
+
+$H$ Hamiltonian
+
+$H\psi = E\psi$
+
+$\displaystyle
+i\hbar \frac{\partial \Psi}{\partial t} = H \Psi
+$
+
+$m$ or $y$ mass
+
+$\displaystyle
+H= -\frac{\hbar^2}{2\mu}\frac{\partial^2}{\partial x^2} + V(x)
+$
+
+$\displaystyle
+i\hbar \frac{\partial \Psi}{\partial t} =
+H \Psi(x,t)
+$
+
+$\displaystyle
+\Psi(x,t) = \psi(x) T(x) = \psi(x) e^{-\frac{iEt}{\hbar}}
+$
+
+Eigenvalue eq:
+
+$\displaystyle
+-\frac{\hbar^2}{2\mu}\frac{d^2\psi}{dx^2} +V(x)\psi(x) = E\psi(x)
+$
+
+$\displaystyle
+\frac{d^2\psi}{dx^2} + \frac{2\mu}{\hbar^2}( E - V(x) ) \psi(x) = 0
+$
+
+Schrödinger eq. corresponding to the n-th eigenstate:
+
+$\displaystyle
+\frac{d^2\psi_n}{dx^2} + \frac{2\mu}{\hbar^2}( E_n - V(x) ) \psi_n(x) = 0
+$
+
+## Solutions for one Particle
+
+1926
+
+### Free Particle
+
+one dimension:
+
+$\displaystyle
+i\hbar \frac{\partial \Phi}{\partial t} = - \frac{\hbar^2}{2m} \frac{\partial^2 \Phi}{\partial x^2}
+$
+
+most general solution:
+
+$\displaystyle
+\Phi (x,t) = \frac{1}{\sqrt{2\Pi \hbar}}
+\int_{-\infty}^{+\infty}
+a(p) e^{\frac{i}{\hbar}(px - \frac{p^2}{2m}t)} dp
+$
+
+### Particle in a Box
+
+Infinite potential well.
+
+### linear harmonic oscilator
+
+For a simple harmonic oscillator in one dimension,
+the potential varies with position (but not time),
+according to:
+
+$$V=\frac{k}{2}x^2$$
+$k$ effective spring constant.
+
+$\omega^2=\frac{k}{m}$  
+$m \equiv \mu$
+
+Three dimension:
+
+$$\hat H = -\frac{\hbar^2}{2m}\nabla^2 +\frac{m\omega^2}{2}r^2$$
+
+$r$ three-dimensional position vector using
+cartesian coordinates.
+
+# wavefunction
+
+A free particle is described by a wave function
+which is a solution of the Schrödinger equation.
+
+$t$ time variable  
+$x_1,x_2,...,x_n$ spatial variable  
+$u = u(x_1,x_2,...,x_n;t)$ scalar function
+
+A wavefunction (electronic state) is *g* if
+it is unchanged under inversion. It is *u*
+if it changes sign under inversion.
+
+$\vec{p} = \hbar \vec{k}$
+
+A wave like this with definite wavelength is not localized in space.
+In a wavepacket, the wavelength of the particle is not precise, and
+the local wavelength deviates on either side of the main wavelength
+value.
+
+The simplest wavefunction is a plane of the form
+
+$$
+\psi(r,t) = A e^{i(kr-\omega t)} = \psi(x,t) = Ae^{\frac{i}{\hbar
+[px-Et]}}
+$$
+
+$\omega$, phase constant  
+$k$, wave vector (force constant, direction of travel)
+
+$k = \frac{2\pi}{\lambda} = \beta$
+
+$\beta$, phase constant
+
+Electron wave function (solution of the three-dimensional Schrödinger wave equation):
+
+$\displaystyle
+-\frac{\hbar}{2m_0}\nabla^2\psi + V(r)\phi = E\psi
+$
+
+# special relativity
+
+The metric is not pos. def.
+
+The Lorentz transformation is a linear transformation. It may include a
+rotation of space; a rotation-free Lorentz transformation is called a **Lorentz
+boost**. In Minkowski space, the mathematical model of spacetime in special
+relativity, the Lorentz transformations preserve the spacetime interval between
+any two events. This property is the defining property of a Lorentz
+transformation. They describe only the transformations in which the spacetime
+event at the origin is left fixed. They can be considered as a hyperbolic
+rotation of Minkowski space. The more general set of transformations that also
+includes translations is known as the Poincaré group.  The elements of the
+Lorentz group are rotations and boosts and mixes thereof.  If the spacetime
+translations are included, then one obtains the inhomogeneous Lorentz group or
+the Poincaré group.  The Lorentz group is the group of all Lorentz
+transformations of Minkowski spacetime
+
+The angular momentum tensor forms 6 of the 10 generators of the Poingaré group,
+the other four are the components of the four-momentum for spacetime
+translation
+
+$M^{0i} = -M^{i0} = K_i$
+
+$M^{ij} = \epsilon_ijk J_k$
+
+$\omega_{0i} = -\omega{i0} = \zeta_i$
+
+$\omega_{ij} = \epsilon_{ijk} \theta_k$
+
+$\vec{ \zeta} = \zeta \hat{\vec{n}} = \vec{n} \tan h^{-1} \beta$,
+$\beta = \frac{v}{c}$ ²q¹ (rapidity)
+
+$\vec{\theta} = \theta \hat{\vec{a}}$
+
+The angular momentum tensor is the generator of boosts and rotations for the Lorentz group.
+
+## Poincaré group
+
+$\mathbb{R}^{1,3} \rtimes O(1,3)$
+
+$\rtimes$, semidirect product  
+$\mathbb{R}^{1,3}$, translations  
+$O(1,3)$, Lorentz group
+
+group multiplication:  
+$(\alpha, f) \cdot (\beta, g) = (\alpha + f \cdot \beta, f \cdot g)$
+
+## Minkowski space
+
+**event**, a point in Minkowski space
+
+**Minkowski space** is a 4-dimensional real vector space equipped with
+a nondegenerate, symmetric bilinear form (Minkowskian inner product) on
+the tangent space at each point in spacetime, with signature either
+(+,-,-,-) or (-,+,+,+).
+
+Elements of Minkowski space are called events.
+It is perhaps the simplest example of a pseudo-Riemannian manifold.
+
+For comparison in general relativity, a Lorentzian manifold $L$ is likewise
+equipped with a metric tensor $g$, which is a nondegenerate symmetric bilinear
+form on the tangent space $T_pL$ at each point $p$ of $L$.  In coordinates, it
+may be represented by a $4\times 4$ matrix *depending on spacetime position*.
+
+Minkowski metric:
+
+$\displaystyle
+\eta =
+\begin{pmatrix} -1&0&0&0
+²nn¹ 0&1&0&0
+²nn¹ 0&0&1&0
+²nn¹ 0&0&0&1
+²nn¹ \end{pmatrix}
+$
+
+$\{ e_0,e_1,e_2,e_3 \}$ standard basis, such that
+$-\eta(e_0,e_0)=\eta(e_1,e_1)=\eta(e_2,e_2)=\eta(e_3,e_3)=1$
+
+$\eta (e_\mu, e_\nu) = \eta_{\mu\nu}$
+
+Relative to a standard basis, the components of a vector $v$ are
+written $(v^0,v^1,v^2,v^3)$.
+
+$v=v^\mu e_\mu$
+
+$v,w$ vectors
+
+Minkowski inner product:
+
+$\eta(v,w)=\eta_{\mu\nu}v^\mu w^\nu = v^0w_0 + v^1w_1 + v^2w_2 + v^3w_3 =
+v^\mu w_\mu = v_\mu w^\mu$
+
+$\eta(v,v)=\eta_{\mu\nu}v^\mu v^\nu = v^\mu v_\mu$
+
+If $v^\mu$ are the components of a vector in a tangent space, then
+$\eta_{mu\nu}v^\mu=v_\nu$ are the components of a vector in the cotangent space
+(a linear functional).  Vectors with lower indices are referred to as covariant
+vectors.  The covariant vectors are (almost always implicitly) identified with
+vectors (linear functionals) in the dual of Minkowski space.  The ones with
+upper idices are contravariant vectors.  The inverse of the map from tangent to
+cotangent spaces, explicitly given by the inverse of $\eta$ in matrix
+multiplication, can be used to define **raising of an index**.  The components
+of this inverse are denoted $\eta^{\mu\nu}$.  It happens that
+$\eta_{\mu\nu}=\eta^{\mu\nu}$.
+
+
+d'Alembert operator $□$.
+The Laplace operator of Minkowski space.
+
+$□ A^\mu = 0$ wave equation for the electromagnetic field
+in vacuum where $A^\mu$ is the electromagnetic four-potential.
+
+# four
+
+## four vector
+
+latin for spacial components $i = 1,2,3$
+greek indices for space and time $\alpha = 0,1,2,3$
+
+four vector $\vec{A}$
+
+contravariant:
+$(A^0,A^1,A^2,A^3)$
+$= A^0E_0 + A^1E_1 + A^2E_2 + A^3E_3$
+$= A^0E_0 + A^{i}E_{i}$
+$= A^{\alpha}E_{\alpha}$
+$= A^{\mu}$
+
+covariant:
+$(A_0,A_1,A_2,A_3)$
+
+### in the algebra of physical space
+
+Pauli matrices
+
+### in spacetime algebra
+
+gamma matrices
+
+Dirac matrices
+
+## other four
+
+four-wave vector
+
+$\vec{K}=K^\mu$
+
+four-position
+$\vec{R} = (ct, \vec{r})$
+
+$\Delta\vec{R} = (c\Delta t, \Delta\vec{r})$
+
+four-gradient
+
+four velocity
+
+four acceleration
+
+four momentum
+
+four force
+
+four frequency
+
+four potential
+
+# General Relativity
+
+The presence of gravity spacetime is described by a curved
+4-dimensional manifold for which the tangent space to any point
+is a 4-dimensional Minkowski space.
+
+$\mu$ and $\nu$ summation indices range from 0 to 3.
+The Greek alphabet is used for space and time
+components, where indices take on values $0,1,2$ or $3$.
+The latin alphabet is used for spatial components only.
+
+Causual path:
+Path where tangent vector is time-like (path
+of measure particle) or null (light ray).
+
+Physically, "free falling" means motion solely under influence
+of gravity.
+Mathematically, one wants to use geodesics to understand "gravity".
+
+Schwarzschild metric:
+A useful approximation for describing slowly rotating astronomical
+objects such as many stars and planets, including Earth and the Sun.
+The Schwarzschild metric describes the spacetime around a
+spherically symmetric body, such as a planet, or a black
+hole.
+
+A **spacetime** $(M^{n+1},g)$ is a connected, time-oriented Lorentzian manifold.
+
+The Ricci tensor is defined on any pseudo-Riemannian manifold, as a trace of
+the Riemann curvature tensor.  The Ricci tensor is a symmetric bilinear form on
+the tangent space of the manifold.  If the Ricci tensor satisfies the vacuum
+Einstein equation, then the manifold is an Einstein manifold, which have been
+extensively studied.
+
+Hyperbolic space is a homogeneous space that can be
+characterized by a constant negative curvature. It is
+the model of hyperbolic geometry. It is distinguished
+from Euclidean spaces with zero curvature that define the
+Euclidean geometry, and models of elliptic geometry (like
+the 3-sphere) that have a constant positive curvature. When
+embedded to a Euclidean space (of a higher dimension), every
+point of a hyperbolic space is a saddle point. Another
+distinctive property is the amount of space covered by the
+3-ball in hyperbolic 3-space: it increases exponentially
+with respect to the radius of the ball, rather than
+polynomially.
+
+In the mathematical field of differential geometry, the
+Riemann curvature tensor or Riemann–Christoffel tensor
+(after Bernhard Riemann and Elwin Bruno Christoffel) is
+the most common method used to express the curvature of
+Riemannian manifolds. It associates a tensor to each point
+of a Riemannian manifold (i.e., it is a tensor field),
+that measures the extent to which the metric tensor is not
+locally isometric to that of Euclidean space. The curvature
+tensor can also be defined for any pseudo-Riemannian
+manifold, or indeed any manifold equipped with an affine
+connection.
+The curvature tensor measures noncommutativity of the
+covariant derivative, and as such is the integrability
+obstruction for the existence of an isometry with Euclidean
+space (called, in this context, flat space).
+
+In the mathematical field of differential topology, the Lie
+bracket of vector fields, also known as the Jacobi–Lie
+bracket or the commutator of vector fields, is an operator
+that assigns, to any two vector fields X and Y on a smooth
+manifold M, a third vector field denoted [X, Y].
+
+The Lie bracket is an R-bilinear operation and turns
+the set of all vector fields on the manifold M into an
+(infinite-dimensional) Lie algebra.
+
+Conceptually, the Lie bracket [X,Y] is the derivative of Y along the flow generated by X. 
+
+Affine connecion.
+The terminology is due to Cartan and has its origins in the
+identification of tangent spaces in Euclidean space Rn by
+translation: the idea is that a choice of affine connection
+makes a manifold look infinitesimally like Euclidean space
+not just smoothly, but as an affine space.
+
+In mathematics, an affine space is a geometric structure
+that generalizes the properties of Euclidean spaces that
+are independent of the concepts of distance and measure of
+angles, keeping only the properties related to parallelism
+and ratio of lengths for parallel line segments.
+
+Any vector space may be considered as an affine space, and
+this amounts to forgetting the special role played by the
+zero vector. In this case, the elements of the vector space
+may be viewed either as points of the affine space or as
+displacement vectors or translations. When considered as a
+point, the zero vector is called the origin. Adding a fixed
+vector to the elements of a linear subspace of a vector
+space produces an affine subspace. One commonly says that
+this affine subspace has been obtained by translating (away
+from the origin) the linear subspace by the translation
+vector. In finite dimensions, such an affine subspace is
+the solution set of an inhomogeneous linear system. The
+displacement vectors for that affine space are the solutions
+of the corresponding homogeneous linear system, which is
+a linear subspace. Linear subspaces, in contrast, always
+contain the origin of the vector space.
+
+In the mathematical field of differential geometry, a Cartan
+connection is a flexible generalization of the notion of an
+affine connection.
+
+Mathematically, spacetime is represented by a 4-dimensional
+differentiable manifold M and the metric is given as
+a covariant, second-order, symmetric tensor on M,
+conventionally denoted by g. Moreover, the metric is
+required to be nondegenerate with signature (-+++). A
+manifold M equipped with such a metric is a type of
+Lorentzian manifold.
+
+Explicitly, the metric is a symmetric bilinear form on
+each tangent space of M which varies in a smooth (or
+differentiable) manner from point to point. Given two
+tangent vectors u and v at a point x in M, the metric can be
+evaluated on u and v to give a real number:
+
+$g_x(u,v) = g_x(v,u) \in \mathbb{R}$
+
+This can be thought of as a generalization of the dot
+product in ordinary Euclidean space. This analogy is not
+exact, however. Unlike Euclidean space — where the dot
+product is positive definite — the metric gives each
+tangent space the structure of Minkowski space.
+
+Physicists usually work in local coordinates (i.e.
+coordinates defined on some local patch of M). In local
+coordinates $x^\mu$ (where $\mu$ is an index which runs from 0
+to 3) the metric can be written in the form
+
+$g = g_{\mu\nu} dx^\mu \otimes dx^\nu$
+
+The coefficients $g_{\mu\nu}$ are a set of 16 real-valued
+functions (since the tensor g is actually a tensor field,
+which is defined at all points of a spacetime manifold). In
+order for the metric to be symmetric we must have
+
+$g_{\mu\nu} = g_{\nu\mu}$
+
+If the local coordinates are specified, or understood from
+context, the metric can be written as a 4 × 4 symmetric
+matrix with entries $g_{\mu\nu}$. The nondegeneracy of $g_{\mu
+\nu}$ means that this matrix is non-singular (i.e. has
+non-vanishing determinant), while the Lorentzian signature
+of g implies that the matrix has one negative and three
+positive eigenvalues. Note that physicists often refer to
+this matrix or the coordinates $g_{\mu\nu}$ themselves as the
+metric.
+
+The simplest example of a Lorentzian manifold is flat
+spacetime, which can be given as R4 with coordinates
+(t,x,y,z) and the metric
+
+$ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2 = \eta_{\mu\nu} dx^{\mu} dx^{\nu}$ 
+
+The flat space metric (or Minkowski metric) is often
+denoted by the symbol η and is the metric used in
+special relativity. In the above coordinates, the matrix
+representation of η is
+
+$\displaystyle
+\eta =
+\begin{pmatrix}
+²nn¹ -c^2&0&0&0
+²nn¹ 0&1&0&0
+²nn¹ 0&0&1&0
+²nn¹ 0&0&0&1
+²nn¹ \end{pmatrix}
+$
+
+In spherical coordinates (t,r,\theta,\phi), the flat space metric takes the form
+
+$ds^2 = -c^2 dt^2 + dr^2 + r^2 d\Omega^2$
+
+where
+
+$d\Omega^2 = d\theta^2 + \sin^2\theta\,d\phi^2$
+
+is the standard metric on the 2-sphere.
+
+Besides the flat space metric the most important metric in
+general relativity is the Schwarzschild metric which can be
+given in one set of local coordinates by
+
+$$ds^{2} = -\left(1 - \frac{2GM}{rc^2} \right) c^2 dt^2 + \left(1 - \frac{2GM}{rc^2} \right)^{-1} dr^2 + r^2 d\Omega^2$$
+
+where, again, $d\Omega^2$ is the standard metric on the
+2-sphere. Here G is the gravitation constant and M is a
+constant with the dimensions of mass.
+
+The metric g completely determines the curvature of
+spacetime. According to the fundamental theorem of
+Riemannian geometry, there is a unique connection ∇ on any
+semi-Riemannian manifold that is compatible with the metric
+and torsion-free. This connection is called the Levi-Civita
+connection.
+
+One of the core ideas of general relativity is that the
+metric (and the associated geometry of spacetime) is
+determined by the matter and energy content of spacetime.
+
+## Einstein's Field Equation
+
+$$R_{\mu\nu} - {1\over 2}R g_{\mu\nu} = \frac{8\pi G}{c^4} \,T_{\mu\nu}$$
+
+where the Ricci curvature tensor
+
+$$R_{\nu \rho} \ \stackrel{\mathrm{def}}{=}\ {R^{\mu}}_{\nu\mu \rho}$$
+
+and the scalar curvature
+
+$$R \ \stackrel{\mathrm{def}}{=}\ g^{\mu \nu}R_{\mu \nu}$$
+
+relate the metric (and the associated curvature tensors) to the stress–energy tensor $T_{\mu\nu}$.
+
+## Poincaré conjecture
+
+A 3-sphere is an example of a 3-manifold.
+A 3-manifold is a space that locally
+looks like Euclidean 3-dimensional space. Intuitively, a
+3-manifold can be thought of as a possible shape of the
+universe. Just like a sphere looks like a plane to a small
+enough observer, all 3-manifolds look like our universe does
+to a small enough observer.
+
+In mathematics, the Poincaré conjecture
+is a theorem about the characterization of the 3-sphere,
+which is the hypersphere that bounds the unit ball in
+four-dimensional space. The conjecture states:
+
+Every simply connected, closed 3-manifold is homeomorphic to the 3-sphere.
+
+In November 2002, Russian mathematician Grigori Perelman
+posted the first of a series of three eprints on arXiv
+outlining a solution of the Poincaré conjecture. Perelman's
+proof uses a modified version of a Ricci flow program
+developed by Richard Hamilton. In August 2006, Perelman
+was awarded, but declined, the Fields Medal for his proof.
+On March 18, 2010, the Clay Mathematics Institute awarded
+Perelman the \$1 million Millennium Prize in recognition of
+his proof.[28] Perelman rejected that prize as well.
+
+Perelman proved the conjecture by deforming the manifold
+using the Ricci flow (which behaves similarly to the heat
+equation that describes the diffusion of heat through an
+object). The Ricci flow usually deforms the manifold towards
+a rounder shape, except for some cases where it stretches
+the manifold apart from itself towards what are known as
+singularities. Perelman and Hamilton then chop the manifold
+at the singularities (a process called "surgery") causing
+the separate pieces to form into ball-like shapes. Major
+steps in the proof involve showing how manifolds behave when
+they are deformed by the Ricci flow, examining what sort
+of singularities develop, determining whether this surgery
+process can be completed and establishing that the surgery
+need not be repeated infinitely many times.
+
+Ricci flow expands the negative curvature part of the
+manifold and contracts the positive curvature part.
+
+In some cases Hamilton was able to show that this works;
+for example, if the manifold has positive Ricci curvature
+everywhere he showed that the manifold becomes extinct
+in finite time under Ricci flow without any other
+singularities. (In other words, the manifold collapses to a
+point in finite time; it is easy to describe the structure
+just before the manifold collapses.)
+This easily implies the Poincaré conjecture in the case
+of positive Ricci curvature. However, in general the Ricci
+flow equations lead to singularities of the metric after
+a finite time. Perelman showed how to continue past these
+singularities: very roughly, he cuts the manifold along the
+singularities, splitting the manifold into several pieces,
+and then continues with the Ricci flow on each of these
+pieces.
+This procedure is known as Ricci flow with surgery.
+
+# Maxwell's equations
+
+Maxwell's equations describe how electric and magnetic
+fields are generated and altered by each other and by
+charges and currents.
+
+For the most accurate predictions in all situations, Maxwell's
+equations have been superseded by quantum electrodynamics (QED).
+
+Gauss's law:
+
+$$\nabla \cdot E = \frac{\rho}{\epsilon_0}$$
+
+The electric field leaving a volume is proportional
+to the charge inside.
+
+Gauss's law for magnetism:
+
+$$\nabla\cdot B = 0$$
+
+There are no magnetic monopoles.
+The total magnetic flux through a closed surface is zero.
+
+Faraday's law of induction:
+
+$$\nabla \times E = \frac{\partial B}{\partial t}$$
+
+The voltage accumulated around a closed circuit is proportional
+to the time rate of change of the magnetic flux it encloses.
+
+Ampère's circuital law:
+
+$$\nabla \times B = \mu_0(J+\epsilon_0 \frac{\partial E}{\partial t}$$
+
+Electric currents and changes in electric fields are proportional
+to the magnetic fields circulating about the areas where they accumulate.
+
+$\rho$ electric charge density (charge per unit volume)
+
+$J$ electric currtent density (current per unit area)
+
+In a region with no charges ($\rho = 0$) and no
+currents ($J=0$), such as in vacuum, Maxwell's equations
+reduce to:
+
+$$\nabla \cdot E = 0$$
+
+$$\nabla \cdot B = 0$$
+
+$$\nabla \times E = - \frac{\partial B}{\partial t}$$
+
+$$\nabla \times B = \frac{1}{c^2} \frac{\partial E}{\partial t}$$
+
+Taking the curl ($\nabla \times$) of the curl equations, and
+using the curl of the curl identity
+
+$$\nabla \times (\nabla \times x) = \nabla (\nabla \cdot x) - \nabla^2x$$
+
+we obtain the wave equations:
+
+$$\frac{1}{c^2} \frac{\partial^2 E}{\partial t^2} - \nabla^2 E = 0$$
+
+$$\frac{1}{c^2} \frac{\partial^2 B}{\partial t^2} - \nabla^2 B = 0$$
+
+$$c=\frac{1}{\sqrt{\mu_0\epsilon_0}}$$
+
+# some
+
+For to measure two operators at the same time they have to commute.
+D.h. to find a set of eigenfunctions that simultaneously diagonalize
+these operators.
+
+# Physic
+
+Spin 1/2 particles are representated by orthogonal vectors
+in the two dimensional complex Hilbert space.
+
+A magnetic field is the magnetic effect of electric currents
+and magnetic materials. The magnetic field at any given
+point is specified by both a direction and a magnitude (or
+strength); as such it is a vector field.
+
+An electric field is a vector field that associates to each
+point in space the Coulomb force experienced by a unit
+electric charge. Electric fields converge and diverge at
+electric charges and they can be induced by time-varying
+magnetic fields. The electric field combines with the
+magnetic field to form the electromagnetic field.
+
+An electromagnetic field (also EM field) is a physical field
+produced by electrically charged objects.[1] It affects the
+behavior of charged objects in the vicinity of the field.
+The electromagnetic field extends indefinitely throughout
+space and describes the electromagnetic interaction. It is
+one of the four fundamental forces of nature (the others are
+gravitation, weak interaction and strong interaction).
+
+Maxwell's Equations together with the Lorentz force law
+form a complete description of classical electrodynamics (or
+electromagnetism) including both electricity and magnetism.
+
+# Quantum mechanics
+
+The State space is a vector space with inner product (Hilbert Space).
+
+Observables: (complex) hermetian linear operators in $C^2$, also diagonalizable.
+
+Die Eigenwerte (real number) werden gemessen.
+
+#---
+
+Ricci-calculus
+
+The lowercase Latin alphabet a, b, c, ... is used to indicate restriction to
+3-dimensional Euclidean space, which take values 1, 2, 3 for the spatial
+components; and the time-like element, indicated by 0, is shown separately.
+
+The lowercase Greek alphabet α, β, γ, ... is used for 4-dimensional spacetime,
+which typically take values 0 for time components and 1, 2, 3 for the spatial
+components.
+
+Two indices (one upper and one lower) with the same symbols within a term are summed over
+
+$
+A_\alpha B^\alpha \equiv \sum_\alpha A_\alpha B^\alpha
+$
+or
+$
+A^\alpha B_\alpha = \sum_\alpha A^\alpha B_\alpha
+$
+
+$
+A_\alpha^\gamma B^\alpha C_\gamma^\beta \equiv \sum_\alpha \sum_\gamma A_\alpha^\gamma B^\alpha C_\gamma^beta
+$
+
+#---
+
+A stationary state does not change in time.
+
+$n_r$ radian q.n. (quantum number) $n= n_r + l +1$
+
+$l$ azimuthal q.n.
+
+# Gauge
+
+deutsch ("Eich-")
+
+The history of gauge theories begins with General Relativity, which can be
+regarded as a non-Abelian gauge theory of a special type. To a large extent the
+other gauge theories emerged in a slow and complicated process gradually from
+General Relativity. Their common geometrical structure – best expressed in
+terms of connections on fiber bundles – is now widely recognized.
+
+It was Weyl who emphasized the role of gauge invariance as a constructive
+principle from which electromagnetism can be derived.
+
+(Electromagnetics) An **isotropic** medium is one such that the permittivity,
+ε, and permeability, μ, of the medium are uniform in all directions of the
+medium, the simplest instance being free space.
+
+# angular momentum
+
+total angular momentum $J$ is always conserved. $J = L + S$.
+
+$L$, orbital angular momentum.
+$L = r \times p$  
+$r$, quantum position operator. $p$, quantum momentum operator.
+
+$S$, spin angular momentum (spin).
+
+$\vec{J} \equiv \vec{r} \times \vec{p} = -i\hbar \frac{ⅆ}{ⅆ\phi}$
+
+$ J = [yp_z - zp_y, zp_x - xp_z, xp_y -yp_x]$
+
+$$
+= [ -i\hbar (y\frac{\partial}{\partial z} - z\frac{\partial}{\partial
+y}),
+-i\hbar (z\frac{\partial}{\partial x} - \frac{\partial}{\partial z}), -i\hbar
+(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x})]
+$$
+
+$$
+J^2 = -\hbar^2[ \frac{1}{\sin\theta} \frac{\partial}{\partial \theta}
+(\sin \theta \frac{\partial}{\partial \theta}) +
+\frac{1}{\sin^2\theta} \frac{\partial^2}{\partial \theta^2}]
+$$
+
+moment of Inertia $I = mr^2$, $r=1$
+
+$H_\text{rot} = \frac{J^2}{2I} = \frac{\hbar^2}{2I}\frac{ⅆ^2}{ⅆ\phi^2}$
+
+$\hbar = 1$
+
+$J_x, J_y$ and $J_z$ are absorvable.
+
+$\bar{J}_x = J_x$, $\bar{J}_y = J_y$, $\bar{J}_z=J_z$
+
+commutative relations:
+
+$[J_x, J_y] = iJ_z$  
+$[J_y, J_z] = iJ_x$  
+$[J_z, J_x] = iJ_x$
+
+$J^2 = J_x^2 + J_y^2 + J_z^2$  
+$J^2 = J_xJ_x + J_yJ_y + J_zJ_z$
+
+$[J^2, J_x] = 0 = [J^2, J_y] = [J^2, J_z]$
+
+# 
+
+Rayleigh number $\text{Ra}$, natural convection
+
+The Prandtl numbers of gases are about 1, which indicates that both
+momentum and heat dissipate through the fluid at about the same rate.
+Heat diffuses very quickly in liquid metals (Pr<<1) and very slowly in
+oils (Pr>>1) relative to momentum.
+
+The mass transfer analog of the Prandtl number is the Schmidt number. 
+
+In the context of species or mass transfer, the Péclet number is the
+product of the Reynolds number and the Schmidt number. In the context
+of the thermal fluids, the thermal Peclet number is equivalent to the
+product of the Reynolds number and the Prandtl number.
+
+# some
+
+Technically, "radians" is not a unit like meters or seconds since it is defined
+as the length along the circular arc defined by an angle divided by the radius
+of the circle and, therefore, is length/length which is dimensionless.
+Nonetheless, it is common to use "radians" as a "unit" to indicate that what is
+being referred to is an angle and not some other dimensionless quantity. For
+this reason, the radian is officially designated as an SI derived unit (as
+opposed to SI base units like meters and seconds). 
+
+ Another quantity that will be occasionally referred to as a value in radians is a "phase shift". When two objects are oscillating and are not perfectly in sync, i.e., they don't reach the maximum of their oscillations at the same time, they are said to be "out of phase". The phase shift is a measure of how far apart the two oscillations are.
+
+We will consider very many quantities such as $\sin(kx + \omega t)$
+, where $x$ and $t$ are position in meters and time in seconds, respectively. In these cases, the units of $\omega$ will be $\frac{1}{s}$, so that the quantity $\omega t$ is dimensionless. Similarly, the units of $k$ are $\frac{1}{m}$.
+
+It is common to refer to the "frequency" $\omega$ in terms such as
+$\sin(kx + \omega t)$
+as the "oscillation frequency". Frequently, however, this is also somewhat confusingly referred to as the "angular frequency", even though no actual physical angle is involved. To add to the confusion, the same symbol $\omega$ is also commonly used to denote the angular velocity of an object that is rotating.
+There is another common usage for the word "frequency", namely the number of full oscillations, or "cycles", per second.
+
+# transport
+
+1 micron (0.001mm) falls down in 3h (Halbwertzeit)
+
+
+# physics
+
+Fundamental physics is all based on the gauge principle.
+A gauge theory may denote either a classical field theory
+or a quantum field theory whose field configurations
+are cocycles in differential cohomology (abelian or
+nonabelian). An ordinary gauge theory is a quantum field
+theory whose field configurations are vector bundles with
+connection. This includes notably the fields that carry the
+three fundamental forces of the standard model of particle
+physics:
+
+Ordinary electromagnetism in the absence of magnetic
+charges is a gauge theory of U(1)U(1)-principal bundles
+with connection.
+
+Fields in Yang-Mills theory (such as appearing in the
+standard model of particle physics and in GUTs) are vector
+bundles with connection.
+
+The above examples of gauge fields consisted of cocycles in
+degree-11 differential cohomology.
+
+More generally, a higher gauge theory is a quantum field
+theory whose field configurations are cocycles in more
+general differential cohomology, for instance higher degree
+Deligne cocycles or more generally cocycles in other
+differential refinements, such as in differential K-theory.
+
+But a whole tower of higher and generalized gauge theories
+became visible with the study of higher supergravity
+theories.
+
+In the first order formulation of gravity also the theory
+of gravity looks a little like a gauge theory. However,
+there is a crucial difference. What really happens here is
+Cartan geometry: the field of gravity may be encoded in a
+vielbein field, namelely an orthogonal structure on the
+tangent bundle, hence as an example of a G-structure, and
+the torsion freedom of this G-structure may be encoded by
+an auxiliary connection, namely a Cartan connection, often
+called the “spin connection” in this context.
+
+# Particles
+
+fermions:
+Particles with half-integer spin.
+
+boson:
+particles with integer spin.
+
+$^3\ce{He}$ has spin 1/2 and is therefore a fermion.
+$^4\ce{He}$ has spin 0 and is a boson.
+
+Half-integer spin means that the intrinsic
+angular momentum value of fermions is $\hbar = \frac{h}{2\pi}$
+times a half integer (1/2, 3/2, 5/2, etc.).
+
+# Semiconductors
+
+Junctions between p-type and n-type semiconductors are used to
+make solar cells, photodiodes, light-emitting diodes, and laser diodes.
+
+DOS: density of states.
+
+The frontier electronic structure of solids is characterized by valence
+and conduction bands, which are analogous to the HOMO and LUMO
+of molecules built from MO theory.
+
+$\ce{Si}$ kann am reinsten hergestellt werden von allen Stoffen.
+
+## Solar Cell
+
+The p-n junction is an electrical diode,
+a device though which current flows in
+only one direction.
+
+p-n diodes are the basis for solar cells,
+photodiodes (light detectors), light emitting
+diodes (LED), and laser diodes.
+
+drift:
+Current generated by an electric field.
+
+Net diffusion occurs until balanced by
+an electric field at the junction.
+At this point, equilibrium is
+established (Fermi level equal).
+
+# Crystal
+
+While the structure of a (monocrystalline) crystal is highly ordered and its
+lattice is continuous and unbroken, amorphous materials, such as glass and polymers,
+are non-crystalline and do not display any structures as their constituents are
+not arranged in an ordered manner. Polycrystalline structures and paracrystalline phases are
+in between these two extremes.
+
+**Polycrystalline** materials are solids that are composed of many crystallites of varying
+size and orientation. Crystallites are also referred to as grains. They are
+small or even microscopic crystals and form during the cooling of many
+materials. Their orientation can be random with no preferred direction, called random
+texture, or directed, possibly due to growth and processing conditions. Fiber texture
+is an example of the latter. The areas where crystallite grains meet
+are known as grain boundaries.
+
+# Sichtbares Licht
+
+Licht nimmt den kürzesten Weg.
+
+When a compound absorbs light in the UV-vis-NIR region,
+an electron moves from a low energy orbital to a
+higher energy orbital.
+
+When a photon interacts with matter, it can be
+absorbed (transition) or scattered ("bounds off",
+elasticly, inelasticly).
+
+Unelastische Streuung von Licht an Atomen oder
+Molekülen: Raman-Streuung.
+
+Rayleigh scattering (no change
+in rotation state of the photon):
+Elastisch gestreutes Licht.
+
+Mie scattering: larger particles (liquid dropplets, cloud, fog).
+
+copper(II) sulfate in solution adsorbs in the
+visual region.
+
+Observer sieht das Sonnenlicht bläulich (Himmel)
+($I\rightarrow \frac{1}{\lambda^4}$ -> bläulich.
+$$
+I=I_0\frac{8\pi^2N\alpha^2}
+{\lambda^4R^4}(1+\cos^2\phi)
+$$
+$N$= # of scatterers.
+$\alpha$= polarizability.
+$R$= distance from scatterer.
+
+# String Theory
+
+The fundamental objects of string theory are open and closed strings.
+
+A string is a physical object that appears
+in string theory and related subjects. Unlike elementary
+particles, which are zero-dimensional or point-like by
+definition, strings are one-dimensional extended objects.
+Theories in which the fundamental objects are strings rather
+than point particles automatically have many properties that
+some physicists expect to hold in a fundamental theory of
+physics.
+
+Mirror symmetry is a relationship between geometric
+objects called Calabi–Yau manifolds. The term refers to
+a situation where two Calabi–Yau manifolds look very
+different geometrically but are nevertheless equivalent when
+employed as extra dimensions of string theory.
+
+Calabi–Yau manifold:
+The motivational definition given by Yau is of a compact
+Kähler manifold with a vanishing first Chern class, that is
+also Ricci flat.
+
+# SI base (7)
+
+length l ²q¹ metre m  
+mass m ²q¹ kilogram kg  
+time t ²q¹ second s  
+electric current I ²q¹ Ampere A  
+thermodynamic themperature T ²q¹ Kelvin K  
+amount of substance n ²q¹ mole mol  
+luminous intensity I$_{v}$ ²q¹ candela cd
+
+# Constants
+
+Avogadro constant  
+$L$, $N_A$  
+6.02214129(27)×1023 mol$^{−1}$
+
+Boltzmann constant  
+k~B~, k  
+1.3806488(13)×10^−23^ J/K.
+
+Gas constant  
+R  
+It is equivalent to the Boltzmann constant, but expressed
+in units of energy (i.e. the pressure-volume product) per
+temperature increment per mole (rather than energy per
+temperature increment per particle). $R=N_A k_B$.
+
+unified atomic mass unit  
+$u = 1.66\times 10^{-27}$kg  
+$\frac{1}{12}$ of weight of $\ce{^{12}C}$
+
+Planck constant  
+$h≈6.626\times 10^{-34}$Js
+
+reduced Planck constant or Dirac constant  
+$\hbar = \frac{h}{2 \pi}$
+
+The Coulomb potential energy for two charges $q_1$ and $q_2$ is
+$$V=\frac{q_1 q_2}{4\pi \epsilon_0 |r|}$$
+
+# Laws
+
+ideal gas law  
+$PV=N k_B T$,  
+$N$ Number of particles (molecules in this case).
+
+Hooke's Law:  
+Restoring (reaction) force:
+$$F=-kX$$
+
+# Derived units
+
+Entropie  
+J K^-1^
+
+The standard enthalpy of reaction (denoted $Δ_rH^⊖$) is the enthalpy change
+that occurs in a system when one mole of matter is transformed by a chemical
+reaction under standard conditions.
+
+electric charge Q  
+1 C = 1 A s  
+$Q=\int_{t_1}^{t_2}I\,dt$.
+
+force Newton N  
+```
+\SI{1}{\kg\m\s^{-2}}
+```
+
+magnetic susceptibility  
+$\chi_{\text{mol}}$
+$\chi_{\text{mass}}$
+
+$\chi_{\text{v}}$
+```
+\ce{Al} $2.2\times 10^{-5}$
+```
+
+electric susceptibility  
+$\chi_e =\varepsilon -1$
+
+$\varepsilon$ permittivity.
+
+relative permittivity  
+$\varepsilon_r(\omega) =\frac{\varepsilon(\omega)}{\varepsilon_0}$  
+Vacuum $1$ (by definition).
+Titanium dioxide 86-173.
+
+$T = \frac{1}{f}$, $f$ frequency.
+
+$v$ frequency (number of oscillations)
+
+$\lambda$ wavelength
+
+$c = \lambda v$
+
+Energy of a photon: $E = hv$
+
+wavenumber [cm^{-1}]:
+${\tilde {\nu }}\;=\;{\frac {1}{\lambda }}$
+
+phase velocity $v_p=\frac{\lambda}{T}=\frac{\omega}{k}$, $k$ angular wave number
+
+$k= \frac{2\pi}{\lambda}$
+$\omega =2\pi f$
+$\lambda = \frac{v}{f}$, $v$ phase speed (magnitude of the phase velocity)
+
+phase velocity of light $v_p = \frac{1}{\sqrt{\mu_0\mu_r\epsilon_0\epsilon_r}}$
+
+electromagnetic waves in a vacuum:  
+$\omega = ck $ linear dispersion relation
+
+$v=\frac{\omega}{k}=\frac{ⅆ\omega}{ⅆk}=c$
+
+$\varepsilon_r(\omega)=1+\chi_e$
+
+In anisotropic media the relative permittivity
+is a second rank tensor.
+
+vacuum permittivity  
+$\varepsilon_0=\frac{1}{c^2 \mu_0}$
+$\varepsilon_0=8.85\times 10^{-12}$ Ax/Vm.
+
+vacuum permeability (magnetic constant)  
+$\mu_0=4\pi\times10^{-7}$ Vs/Am.
+
+energy Joule \si{\joule} \quad \SI{1}{\newton\m}
+
+pressure Pascal \si{\pascal} \SI{1}{\newton\m^{-2}}
+
+power Watt W, \SI{1}{\joule\s^{-1}}
+
+electric potential Volt V, \SI{1}{\joule\coulomb^{-1}}
+
+electric resistance Ohm $\Omega$, \SI{1}{\volt\ampere^{-1}}
+
+Farad F, \SI{1}{\coulomb\volt^{-1}}
+
+Luminance cd m^-2^.
+Sun at noon ca. $1.6\times 10^9$ cd/m^2^.
+
+\minisec{Viskosität}
+dynamische Viskosität $η$ \[Pa s\]
+
+kinematische Viskosität $ν$ \[m^2^/s\]
+
+Table of $η$ [mPa s]:
+
+Wasser:  
+0° 1.792  
+5° 1.52  
+20° 1.005  
+25° 0.891  
+50° 0.549  
+100° 0.284  
+
+Luft:  
+0° 0.0172  
+20° 0.0182  
+100° 0.0218  
+
+Lack: ≈100
+
+Dichte $ρ$. $\eta = \nu \rho$
+
+Brechzahl (refraction index) n  
+$n = \frac{c}{v}$,
+where c is the speed of light in vacuum and v is
+the phase velocity of light in the medium.  
+Vacuum: 1  
+Air: 	1.000293 (at 0 °C and 1 atm)  
+Water 	1.333 (at 20 °C)  
+Titanium dioxide: 2.614 (at room temperatur, $\lambda$: 589.29)
+
+The effect matter has on light is defined by a property called the refractive
+index. The refractive
+index is a complex number: its real part measures how the matter affects the
+speed of light (slowing it
+down relative to its speed in a vacuum) and its imaginary part determines
+whether the light is absorbed
+(converted to other forms of energy) as it propagates. The refractive index may
+vary as a function of
+light wavelength.
+
+$\text{OPL} = nd$  
+Optical path length (OPL) is the product of the geometric length $d$
+of the path light follows through a system, and the index of
+refraction of the medium through which it propagates.
+
+This is an important concept in optics because it determines the phase
+of the light and governs interference and diffraction of light as it
+propagates. According to Fermat's principle, light rays can be characterized as those
+curves that optimize the optical path length.
+In optics, Fermat's principle or the principle of least time is the
+principle that the path taken between two points by a ray of
+light is the path that can be traversed in the least time.
+
+Phase in sinusoidal functions or in waves has two different, but closely
+related, meanings. One is the initial angle of a sinusoidal function at
+its origin and is sometimes called phase offset or phase difference. Another
+usage is the fraction of the wave cycle that has elapsed relative to the origin.
+
+The Fresnel equations (or Fresnel conditions), deduced by Augustin-Jean Fresnel /frɛˈnɛl/, describe
+the behaviour of light when moving between media of differing refractive indices.
+The reflection of light that the equations predict is known as Fresnel
+reflection.
+The equations assume the interface between the media is flat and that
+the media are homogeneous. The incident light is assumed to be a
+plane wave, and effects of edges are neglected.
+
+P-polarized ("parallel") light is incident linearly polarized light with
+polarization direction lying in
+the plane of incidence. S-polarized ("senkrecht") light has polarization
+perpendicular to the plane of incidence.
+
+Snell's law:
+```
+$n_1 \sin \theta_i = n_2 \sin \theta_t$.
+```
+
+For non-magnetic media:
+
+the reflectance for s-polarized light becomes
+
+$R_\text{s} =
+\left|\frac{n_1 \cos \theta_{\text{i}} - n_2 \cos \theta_{\text{t}}}
+{n_1 \cos \theta_{\text{i}} + n_2 \cos \theta_{\text{t}}}\right|^2$
+
+p-polarized light becomes
+
+$R_\text{p} =
+\left|\frac{n_1\cos\theta_{\text{t}} - n_2 \cos \theta_{\text{i}}}
+{n_1 \cos \theta_{\text{t}} + n_2 \cos \theta_{\text{i}}}\right|^2$
+
+\minisec{Lattice energies}
+U  
+```
+\si{\kilo\joule\per\mol}
+```
+
+Energy required to completely separate
+one mole of a crystal into a gas of
+its ions.
+
+U~Born-Lande~  
+$\frac{r_e}{z_+z_-e^2NA}(1-\frac{1}{n})$,
+$r_e$ equilibrium distance.
+
+MgO 3938  
+CaO 3566  
+
+melting point:  
+MgO 2800 °C  
+Ca0 2572 °C  
+
+LiF 1024  
+LiCl 861  
+
+NaF 911  
+KF 815  
+
+Rock salt (fcc):  
+(increasingly covalent)  
+AgF 920 (U~Born-Lande~, calculation) 953 (U~Born-Huber~, experimentel)  
+AgCl 832 903  
+AgBr 815 895  
+
+# Wavenumber
+
+Because of the use of this term in applied physics, including spectroscopy,
+often the reference distance should be assumed to be cm.
+For example, a particle's energy may be given as a wavenumber in
+cm^−1^, which strictly speaking is not a unit of energy. However if
+one assumes this corresponds to electromagnetic radiation, then it can be directly
+converted to any unit of energy, e.g. 1 cm^−1^ implies 1.23984×10^−4^ eV
+and 8065.54 cm^−1^ implies 1 eV.
+It has dimensions of reciprocal length, so its SI unit is the
+reciprocal of meters (m^−1^). In spectroscopy it is usual to give wavenumbers
+in cgs unit, i.e., reciprocal centimeters (cm^−1^).
+
+For electromagnetic radiation in vacuum, wavenumber is proportional to frequency and to
+photon energy. Because of this, wavenumbers are used as a unit of
+energy in spectroscopy.
+
+In spectroscopy, the wavenumber $\tilde{\nu}$ of electromagnetic radiation is defined as
+$\tilde{\nu} = \frac{1}{\lambda}$
+where $λ$ is the wavelength [nm] of the radiation.
+
+A wavenumber can be converted into energy $E$ via Planck's relation:
+$E = hc\tilde{\nu}$.
+It can also be converted into frequency via
+$\tilde{\nu} = \frac{\nu}{c_n}$
+where $\nu$ is the frequency, and $c_n$ is the speed of light in the medium.
+
+# double layer
+
+Schematic of double layer in a liquid at contact with a negatively-charged
+solid. Depending on the nature of the solids, there may be another
+double layer (unmarked on the drawing) inside the solid.
+
+A double layer (DL, also called an electrical double layer, EDL) is a structure
+that appears on the surface of an object when it is exposed to a fluid. The
+object might be a solid particle, a gas bubble, a liquid droplet, or a porous
+body. The DL refers to two parallel layers of charge surrounding the object.
+The first layer, the surface charge (either positive or negative), comprises
+ions adsorbed onto the object due to chemical interactions. The second layer is
+composed of ions attracted to the surface charge via the coulomb force,
+electrically screening the first layer. This second layer is loosely associated
+with the object. It is made of free ions that move in the fluid under the
+influence of electric attraction and thermal motion rather than being firmly
+anchored. It is thus called the "diffuse layer".
+
+# Wärme
+
+Emission und Absorption von Wärmestrahlung ist neben Konvektion und
+Wärmeleitung ein Weg zur Übertragung von Wärme, im Vakuum ist es der einzige
+Übertragungsweg.
+
+Wärmestrahlung ist ein makroskopisches Phänomen.
+
+Bei der Wärmeleitung oder Konduktion wird kinetische Energie zwischen
+benachbarten Atomen oder Molekülen ohne Materialtransport übertragen.
+Auch der Wärmetransport durch die Bewegung freier Elektronen im Metall wird als
+Wärmeleitung bezeichnet. 
+
+Auch der Wärmetransport durch die Bewegung freier Elektronen im Metall wird als
+Wärmeleitung bezeichnet. 
+
+Jeder Körper, dessen Temperatur über dem absoluten Nullpunkt liegt, gibt
+Wärmestrahlung an seine Umgebung ab. Ein Schwarzer Körper ist ein idealisierter
+Körper, der alle auf ihn treffende Strahlung vollständig absorbieren kann
+(Absorptionsgrad = 1). Nach dem kirchhoffschen Strahlungsgesetz erreicht daher
+auch sein Emissionsgrad ε den Wert 1, und er sendet die bei der betreffenden
+Temperatur maximal mögliche thermische Leistung aus. Das
+Stefan-Boltzmann-Gesetz gibt an, welche Strahlungsleistung P ein Schwarzer
+Körper der Fläche A und der absoluten Temperatur T aussendet. Es lautet
+
+$P=\sigma \cdot A\cdot T^4$
+
+mit der Stefan-Boltzmann-Konstanten $\sigma$.
+
+$$σ = \frac{2 π^5 k_B^4}{15 h^3 c^2}$$
+
+# Magnetism
+
+Most materials respond to an applied B-field by producing   
+their own magnetization M and therefore their own B-field.  
+Typically, the response is weak and exists only when the    
+magnetic field is applied. The term magnetism describes how 
+materials respond on the microscopic level to an applied    
+magnetic field and is used to categorize the magnetic phase 
+of a material. Materials are divided into groups based upon 
+their magnetic behavior:                                    
+
+Diamagnetic materials produce a magnetization that opposes the magnetic field.
+
+Paramagnetic materials produce a magnetization in the same direction as the applied magnetic field.
+
+Ferromagnetic materials and the closely related             
+ferrimagnetic materials and antiferromagnetic materials can 
+have a magnetization independent of an applied B-field with 
+a complex relationship between the two fields.              
+
+Superconductors (and ferromagnetic superconductors) are
+materials that are characterized by perfect conductivity
+below a critical temperature and magnetic field. They also
+are highly magnetic and can be perfect diamagnets below a
+lower critical magnetic field. Superconductors often have
+a broad range of temperatures and magnetic fields (the
+so-named mixed state) under which they exhibit a complex
+hysteretic dependence of M on B.
+
+---
+
+By definition, a black body in thermal equilibrium has an emissivity of $\epsilon = 1.0$.
+
+**Classical electromagnetism** studies the interactions between electric
+charges and currents using an extension of the classical Newtonian model.
+
+**Electric charge** \[C, Coulomb\] is the physical property of matter that
+causes it to experience a force when placed in an electromagnetic field.
+These are two types of electric charges: positive and negative.
+Like charges repel and unlike attract.
+An object (one not make of antimatter) is negatively charged if it has
+an excess of electrons, and is otherwise positively charged or uncharged.
+
+An **electric current** is a flow of electric charge.
+
+A **magnetic field** is the magnetic effect of electric currents and
+magnetic materials. The magnetic field at any given point is specified by both
+a direction and a magnetitude (or strength); as such it is a vector field.
+B \[tesla\] "Magnetic flux density". H \[A/m\], the term "magnetic field" is
+historically reserved for H.
+
+**Electrostatic fields** are electric fields E which do not change with time,
+which happens when charges and currents are stationary.
+In that case Coulomb's law fully desribes the field.
+
+Electric displacement field D
+
+$D\equiv \epsilon_0 E + P$
+
+$P$ macroscopic density of the permanent and induced electric dipole moments
+in the material, called polarization density.
+
+For materials without polarization and magnetisation ("vacuum"):
+
+$D=\epsilon_0 E$  
+$H=\frac{1}{\mu_0}B$
+
+**Electromagnetic** (EM) waves are produced whenever charged particles are accelerated,
+and these waves can subsequently interact with any charged particles.
+
+EM waves carry energy, momentum and angular momentum away from their source particle
+and can impart those quantities to matter with which they interact.
+
+Quanta of EM waves are called **photons**, which are massless, but they are still
+affected by gravity.
+
+Electromagnetic radiation is associated with those EM waves that
+are free to propagate themselves ("radiate") without the continuing influence of the
+moving charges that produced them, because they have achieved sufficient distance from those
+charges.
+
+Quantum effects provide additional sources of EM radiation, such as the transition of
+electrons to lower energy levels in an atom and black body radiation.
+
+$$E = hf = \frac{hc}{\lambda}$$
+
+$$p = \frac{E}{c}$$
+
+$h$ ca. $6.6 \times 10^{-34}$ J s.
+
+$v=f\lambda$
+
+$v=c$ in vacuum.
+
+Light usually has multiple frequencies that sum to form the resultant wave.
+Different frequencies undergo different angles of refraction, a phenomenon
+known as **dispersion**.
+
+As waves cross boundaries between different media, their speed change
+but their frequencies remain constant.
+
+Electromagnetic waves in free space must be solutions of Maxwell's
+electromagnetic wave equation. **Interverence** is the superposition
+of two or more waves resulting in a new wave pattern.
+
+Electromagnetic wave equation:
+
+$$(c^2\nabla^2 - \frac{\partial^2}{\partial t^2})E=0$$
+
+and also $B$ for $E$.
+
+$$c=\frac{1}{\sqrt{\mu_0\epsilon_0}}$$
+
+Photoelectric effect:
+
+The maximum kinetic energy of an ejected electron
+is given by $K_\text{max} = hf - \phi$.
+The term $\phi$ is the **work function**, which gives the minimum
+energy required to remove a delocalised electron from the surface
+of the metal. $\phi = hf_0$ where $f_0$ is the threshold frequency for the metal.
+
+Lorents force:
+
+If a particle of charge $q$ moves with velocity $v$ in the
+presence of an electric field $E$ and a magnetic field $B$, then
+it will experience a force
+$$F= qE + a(v\times B)$$
+
+---
+
+Hygroskopie (Hygroskopizität) bezeichnet in der Chemie und Physik
+die Eigenschaft von Stoffen, Feuchtigkeit aus der Umgebung (meist in Form von
+Wasserdampf aus der Luftfeuchtigkeit) zu binden. Viele aufnehmende Stoffe – soweit es
+sich um feste Stoffe handelt – zerfließen oder verklumpen durch die Wasseraufnahme.
+Eine Ausnahme bilden hier z. B. die Zeolithe.
+
+Suspension:  
+Unlike colloids, suspensions will eventually settle.
+
+Colloids:  
+Kolloide Lösungen stehen zwischen echten Lösungen
+und Suspensionen.
+
+Aerosol:  
+Bacteria, Viruses, Particles.
+The term aerosol commonly refers to the particulate/air mixture, as opposed to
+the particulate matter alone.
+A suspension of liquid droplets or fine solid particles in a gas is calles an aerosol.
+
+Transport:  
+(1) Iertia (impaction, streamline crossing),
+(2) gravitational sedimentation,
+(3) Brownian diffusion.
+
+Fine and ultrafine (10 nm bis 1 micrometer)
+things are too small for (1) and (2) and
+too big for (3) in a short period of time.
+
+# ---
+
+State some fundamental geometric properties about your coordinate system, and
+the Hamiltonian figures out the rest. It’s the key to unlocking the dynamical
+properties of the system.
+
+Symplectic manifolds serve as the phase spaces in the Hamiltonian formalism of
+classical mechanics, while four-dimensional Lorentzian manifolds model
+spacetime in general relativity.
+
+# Some
+
+**degenerate state**: same Energy, different quantum states.

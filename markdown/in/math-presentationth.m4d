@@ -1,0 +1,156 @@
+# presentation
+
+$$
+\frac{1}{|G|} \sum_{\chi\in C(G)} \chi(g) =
+\begin{cases} 1 & \text{if}\, g = 1 ²nn¹ 0 & \text{otherwise} \end{cases}
+$$
+
+$$
+\frac{1}{|G|} \sum_{g\in C(G)} \chi(g) =
+\begin{cases} 1 & \text{if}\, \chi = \chi_0 ²nn¹ 0 & \text{otherwise} \end{cases}
+$$
+
+$G$, finite group  
+$K$, field
+
+A $K$-representation of $G$ is a homomorphism $\chi: G \to \text{GL}(n,K)$.
+
+$n$ is called the **degree** of $\chi$.
+
+$K$-reprs $\mathcal{X}$ and $\mathcal{Y}$ of $G$, both of degree $n$,
+are **similar** if there exists an invertible $n\times n$ matrix $P$
+over $K$ s.t. $\mathcal{Y}(g) = p^{-1}\mathcal{X}(g)P$, $∀g\in G$
+
+$K[G]$, group algebra
+
+If $\mathcal{X}$ is $K$-repr of $G$ with degree $n$,
+then $\mathcal{X}$ can be extended linearly to $K[G]$.
+The result is an algebra homomorphism $\mathcal{X}:K[G]\to M_n(K)$, where
+$M_n(K)$ is the algebra of $n\times n$ matrices.
+
+Assuming that $K$ is algebraically closed, the $K$-repr $\mathcal{X}$ of $G$
+is irreducible iff $\mathcal{X}$ maps $K[G]$ to a full algebra $M_n(K)$.
+
+$K=\mathbb{C}$  
+$\mathbf{Z}$, centre
+
+$$
+\mathbb{C}[G]=\sum_{i=1}^{k} M_{n_i}(\mathbb{C})
+$$
+
+$k=\text{dim}(\mathbf{Z}(\mathbb{C}[G]))$ = number of classes of $G$.
+
+$$
+|G| = \text{dim}(\mathbb{C}[G]) = \sum_{i=1}^k (n_i)^2
+$$
+
+$G\to \mathbb{C}[G] \to$  
+(projection to the $i$th summand)  
+$M_{n_i}(\mathbb{C})$ is an irreducible $\mathbb{C}$-repr of $G$
+
+write $\mathcal{X}_i$ to denote this repr
+
+Every irred $\mathcal{C}$-repr of $G$ is similar to one of the $\mathcal{X}_i$
+
+Given a $\mathbb{C}$-repr $\chi$ of $G$, the associated **character** $\chi$
+is the function $G\to \mathbb{C}$ given by $\chi(g)=\text{trace}(\mathcal{X}(g))$.
+
+We say $\mathcal{X}$ affords $\chi$.
+Similar repr afford equal characters.
+
+If $\mathcal{X}$ affords $\chi$ then $\chi(1)$ is the degree of
+$\mathcal{X}$, it is called the **degree of** $\chi$.
+
+$\chi(x^{-1}gx) = \chi(g)$, so characters are constant on conjugacy
+classes.
+
+If $\alpha$ and $\beta$ are characters of $G$ afforded by $U$ and $V$ respectively,
+then the representation $\mathcal{X}$ given by 
+$$
+\mathcal{X}(g) =
+\begin{pmatrix}
+U(g) & 0 \\
+0    & V(g)
+\end{pmatrix}
+$$
+
+affords the character $\chi = \alpha + \beta$
+
+Sums of characters are characters. A character that is not a sum of two
+characters is said to be **irreducible**.
+Every character is a sum of irreducible characters.
+
+Every character is a sum of irreducible characters.
+
+character $C(\mathbb{Z}/n\mathbb{Z}) = \{ \chi_j : 0 \leq j < n \}$
+
+$\chi_j(m) = e^{\frac{2\pi imj}{n}} = e(\frac{mj}{n})$
+
+$e(\alpha)a := e^{2\pi i\alpha}$
+
+$\chi_0$ principal character = 1.
+
+The **principal** character $1_G$ of $G$ is the trivial homomorphism,
+with constant value $1$.
+
+A character $\chi(\text{mod} q)$ is induced by $\chi_1(\text{mod} q_1)$, $q_1|q$
+if $\chi(n)=\chi_1(n)$ for $(n,q)=1$.
+
+A character $\chi$ is uniquely a sum of irred character.
+These are called the irreducible constituents of $\chi$.
+
+A character $\chi(\text{mod} q)$ is called **primitive** if it
+is not induced by a character of a smaller modulus.
+
+A **linear** character is a character $\gamma$ s.t. the degree $\gamma(1)=1$
+
+The number of linear characters of $G$ is $|G : G'|$
+
+$\text{Irr}(G)$ ist the set of irred characters of $G$.
+
+Theorem:
+The characters afforded by the $\chi_i$ are distinct and linearly idependent,
+and they form the set $\mathrm{Irr}(G)$
+
+$$
+\sum_{\chi\in\text{Irr}(G)} {\underbrace{\chi(1)}_{\text{degree}}}^2 = |G|
+$$
+
+$|\text{Irr}(G)|=k$, the number of conjugacy classes of $G$.
+
+$G$ is abelian iff every member of $\text{Irr}(G)$ has degree $1$. $G$
+is abelian iff $k=|G|$.
+
+The set $\text{Irr}(G)$ is a basis for the space $\text{cf}(G)$ of
+class functions.
+
+Let $\mathcal{X}$ be a repr of $G$ with degree $d$ and let $g\in G$
+have order $n$. Then $\mathcal{X}(g)^n=I$, the $d\times d$ identical
+matrix.
+
+The matrix $\mathcal{X}(g)$ is simila to a diagonal matrix whose diagonal entries are nth
+roots of unity.
+
+If $\mathcal{X}$ affords the char $\chi$, then $\chi(g) =
+\text{trace}(\mathcal{X}(g)) = \epsilon_1 + \dots + \epsilon_d$, where
+$\epsilon_i$ for $1\leq i \leq d$ are nth root of unity.
+
+$\chi(g^{-1}) = \text{trace}(\mathcal{X}(g)^{-1} = \bar\epsilon_1 \dots
+\bar\epsilon_d = \overline{\chi(g)}$
+
+theorem:
+
+Let $\chi$ be a char of a group $G$, where $\chi$ is afforded by a repr $\mathcal{X}$, and let $g \in G$. Then
+
+(a) $|\chi(g)| \le \chi(1)$  
+(b) $|\chi(g)| = \chi(1)$ iff $\mathcal{X}(g)$ is a scalar matrix  
+(c) $\chi(g) = \chi(1)$ iff $\mathcal{X}(g)$ is the identity matrix
+
+Let $\chi$ be a char of $G$. Then
+$\{ g \in G | \chi(g) = \chi(1) \}$
+is the kernel of every repr affording $\chi$.
+In particular, this subset is a normal subgroup of $G$.
+
+we write $\text{ker}(\chi) = \{ g \in G | \chi(g) = \chi(1) \}$
+
+This normal subgroup is called the **kernel** of $\chi$, and $\chi$ is **faithful** if $\text{ker}(\chi)=1$.

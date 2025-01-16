@@ -1,0 +1,301 @@
+# Polymers
+
+Tacticity: stereoregularity or spatial arrangement of R
+units along chain
+
+isotactic: all R groups on same side of chain
+
+syndiotactic: R groups alternate sides
+
+atactic: R groups randomly positioned
+
+An **oligomer** is a molecular complex that consists of
+a few monomer units (lower degree of polymeriasatin), in
+contrast to a polymer, where the number of monomers is, in
+principle, not limited. Dimers, trimers, and tetramers are,
+for instance, oligomers composed of two, three and four
+monomers, respectively.
+
+Polyethylen (schwarze Abwasserleitungen)  
+Polypropylen  
+Polytetrafluorethen (Teflon)  
+
+---
+
+Amino resins
+
+PET Ethylene glycol and terephtalic acid
+PF Phenol formaldehyd resin
+MF Melamine + Formaldehyd (Melamine resin)
+PE (LDPE, HDPE, LLDPE, ULDPE, UHMWPE)
+PP
+PVC
+PAN
+PMMA
+SBR (Buna-rubber)
+CR or PCP (chloropren-rubber; Neoprene)
+PDMS (Silicon rubber)
+NBR (Nitrile)
+PBR/BR Butyl rubber
+
+PS polystyrene  
+R groups are Benzene rings
+
+PTFE
+Fluoro rubber is a copolymer of tetrafluroethylene
+and hexafluoropropylene.
+
+EPDM
+Coplymere of ethylene and propylene with a diene monomer.
+
+PVA
+obtained from hydrolysis of polyvinylacetat
+
+PolyHEMA
+PNIPAAm
+PAm
+
+## Copolymere
+
+When two or more different monomers unite together to
+polymerize, their result is called a copolymer and its
+process is called copolymerization.
+
+The following examples refer to a two component system, in
+which one monomer is designated A and the other B.
+
+Statistical Copolymers:  
+Also called random copolymers. Here the monomeric units are
+distributed randomly, and sometimes unevenly, in the polymer
+chain: -ABBAAABAABBBABAABA-.
+
+Alternating Copolymers:  
+Here the monomeric units are distributed in a regular
+alternating fashion, with nearly equimolar amounts of each
+in the chain: -ABABABABABABABAB-.
+
+Block Copolymers:  
+Instead of a mixed distribution of monomeric units, a long
+sequence or block of one monomer is joined to a block of the
+second monomer: -AAAAA-BBBBBBB-AAAAAAA-BBB.
+
+Graft Copolymers:  
+As the name suggests, side chains of a given monomer
+are attached to the main chain of the second monomer:
+-AAAAAAA(BBBBBBB-)AAAAAAA(BBBB-)AAA-.
+
+---
+
+Isocyansäure: $\ce{HN=C=O}$.
+Isocyanic acid is the simplest stable chemical compound
+that contains carbon, hydrogen, nitrogen, and oxygen, the
+four most commonly found elements in organic chemistry and
+biology.
+
+A carbamate is an organic compound derived from carbamic
+acid (NH2COOH). A carbamate group, carbamate ester (e.g.,
+ethyl carbamate), and carbamic acids are functional
+groups that are inter-related structurally and often are
+interconverted chemically. Carbamate esters are also called
+urethanes.
+
+:::chemfig
+\chemfig{
+               O% 2
+         =[:90]% 1
+                  (
+             -[:30]{O}{^{-}}% 4
+                  )
+    -[:150,,,2]H_2N% 3
+}
+:::
+
+## Aniline
+
+Aniline, phenylamine or aminobenzene is a toxic organic
+compound with the formula C6H5NH2. Consisting of a
+phenyl group attached to an amino group, aniline is the
+prototypical aromatic amine. Its main use is in the
+manufacture of precursors to polyurethane and other
+industrial chemicals
+
+:::chemfig
+\chemfig{
+              NH_2% 7
+    -[:180,,1]% 4
+      =[:240]% 3
+       -[:180]% 2
+      =[:120]% 1
+        -[:60]% 6
+            =% 5
+                 (
+           -[:300]% -> 4
+                 )
+}
+:::
+
+Many analogues of aniline are known where the phenyl group
+is further substituted. These include toluidines, xylidines,
+chloroanilines, aminobenzoic acids, nitroanilines, and many
+others.
+
+## Polyester
+
+Aliphatisch, aromatic.
+
+Polyester is a category of polymers that contain the
+ester functional group in their main chain.
+
+Polylactic acid (PLA).
+Ring-opening polymerization of lactide.
+
+Polyethylene terephthalate (PET).
+Polycondensation of terephthalic acid with ethylene glycol.
+
+Polytrimethylene terephthalate (PTT).
+Polycondensation of terephthalic acid with 1,3-propanediol.
+
+Polybutylene terephthalate (PBT).
+Polycondensation of terephthalic acid with 1,4-butanediol.
+
+Polyethylene naphthalate (PEN).
+Polycondensation of at least one naphthalene dicarboxylic acid with ethylene glycol.
+
+## Alkydharz
+
+Alkyd resins are branched polyesters made by reacting
+dicarboxylic acids or anhydrides, polyols such as
+glycerol or pentaerythritol, and long-chain unsaturated
+monocarboxylic fatty acids derived from natural oils (e.g.,
+linseed oil, soya oil, or dehydrated castor oil). The
+unsaturations present in fatty acid chains are susceptible
+to undergo oxidative crosslinking by air oxygen in the
+presence of catalytic amounts of siccatives, such as
+metal salt of organic acids. Alkyd resins are therefore
+well suited to applications such as air-drying varnishes
+or architectural paints, typically in solvent-based
+formulations. Their low cost and great versatility make them
+the largest type of coatings produced worldwide.
+
+Alkyd resin synthesis: This synthesis consists of two steps.
+In the first step, a triglyceride oil is reacted at ca. 250
+◦C with polyols, such as glycerol or pentaerythritol, in
+the presence of a basic catalyst to form a monoglyceride.
+In the second step, phthalic anhydride, with or without
+another dibasic acid such as maleic anhydride, is added
+to the reaction medium and reacted at high temperature.
+The resulting product is a branched polyester. Soya oil,
+88.6 g, 20.0 g of pentaerythritol, and 0.06 g of lithium
+hydroxide monohydrate are weighed into a 250-mL three-necked
+round-bottom flask fitted with a magnetic stirrer, a
+Dean–Stark separator, and nitrogen inlet and outlet. The
+reaction mixture is heated to 250 ◦C for 30 min under
+nitrogen, then cooled to 200 ◦C. Phthalic anhydride, 34.6
+g, 0.70 g of maleic anhydride, and 8.0 g of xylene are
+added. The reaction mixture is heated to 230 ◦C and the
+toluene–water azeotrope is removed by distillation. After
+cooling to room temperature, 52 g of white spirit is added.
+
+Cure of alkyd resin: A varnish is prepared by mixing 100
+g of the alkyd resin prepared above, 0.05 g of Co(II)
+2-ethylhexanoate, 0.05 g of calcium 2-ethylhexanoate, and
+0.02 g of lead 2-ethylhexanoate. This mixture is held for
+24 h in a closed flask before use. A thin layer of this
+varnish, applied on a metal plate, forms a hard, glossy
+coating after 24 h drying at room temperature.
+
+## Acrylharz
+
+Acrylic acid:
+
+:::chemfig
+\chemfig{
+              % 1
+       =[:330]% 2
+        -[:30]% 3
+                 (
+           =[:330]O% 4
+                 )
+    -[:90,,,1]OH% 5
+}
+:::
+
+Poly(acrylic acid) (PAA or Carbomer) is generic name for
+synthetic high molecular weight polymers of acrylic acid.
+They may be homopolymers of acrylic acid, crosslinked with
+an allyl ether pentaerythritol, allyl ether of sucrose or
+allyl ether of propylene. In a water solution at neutral pH,
+PAA is an anionic polymer, i.e. many of the side chains of
+PAA will lose their protons and acquire a negative charge.
+This makes PAAs polyelectrolytes, with the ability to absorb
+and retain water and swell to many times their original
+volume. Dry PAAs are found in the market as white and fluffy
+powders. Carbomer codes (910, 934, 940, 941 and 934P) are an
+indication of molecular weight and the specific components
+of the polymer. For many applications PAAs are used in form
+of alkali metal or amonium salts, e.g. sodium polyacrylate.
+Sodium polyacrylate, also known as waterlock, is a sodium
+salt of polyacrylic acid with the chemical formula
+[-CH2-CH(CO2Na)-]n and broad application in consumer
+products. It has the ability to absorb as much as 200 to 300
+times its mass in water. Sodium polyacrylate is an anionic
+polyelectrolyte with negatively charged carboxylic groups
+in the main chain. While sodium neutralized polyacrylic
+acids are the most common form used in industry, there are
+also other salts available including potassium, lithium and
+ammonium.
+
+An allyl group is a substituent with the structural
+formula H2C=CH−CH2R. A site on the unsaturated carbon
+atom is called the allylic position or allylic site. A
+group attached at this site is sometimes described as
+allylic. Thus, CH2=CHCH2OH "has an allylic hydroxyl group".
+Allylation is any chemical reaction that adds an allyl group
+to a substrate. Carbonyl allylation is a type of organic
+reaction in which an activated allyl group is added to
+carbonyl group producing an allylic tertiary alcohol.
+
+## Polyamides
+
+Aliphatisch, aromatisch.
+
+Polyamides (PAs) are high-molecular-weight materials
+containing amide units; the hydrocarbon segments between the
+amide groups can be aliphatic, partially aromatic, or wholly
+aromatic. The type of hydrocarbon segment used has an effect
+on the chain flexibility and structural regularity; this
+is important for the formation of the crystalline phase.
+Polyamides, in common with polypeptides, contain an amide
+group and are often called Nylons, the trade name given to
+them by DuPont.
+
+A primary amino group (-NH2) often functions as the starting
+point for two polymeric chains, especially in the case of
+polyether polyols.
+
+Polymeric polyols are generally used to produce other
+polymers. They are reacted with isocyanates to make
+polyurethanes used to make mattresses, foam insulation for
+appliances (refrigerators and freezers), home and automotive
+seats, elastomeric shoe soles, fibers (e.g. Spandex,
+Elastan), and adhesives.
+
+## Phenolharz
+
+Phenolic resins comprise a large family of oligomers and
+polymers, which are various products of phenols reacted with
+formaldehyde.
+
+Base-catalysed phenol-formaldehyde resins are made with a
+formaldehyde to phenol ratio of greater than one (usually
+around 1.5). These resins are called resoles. Phenol,
+formaldehyde, water and catalyst are mixed in the desired
+amount, depending on the resin to be formed, and are then
+heated. The first part of the reaction, at around 70 °C,
+forms a thick reddish-brown tacky material, which is rich in
+hydroxymethyl and benzylic ether groups. Resols are major
+polymeric resin materials widely used for gluing and bonding
+building materials. Exterior plywood, oriented strand boards
+(OSB), engineered laminated composite lumber (LCL) are
+typical applications.
+
